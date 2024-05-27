@@ -5,8 +5,8 @@
 
 /* Mainheader */
 #mainheader {
-	background: radial-gradient(at 50% 10px, #3a3938, #fff, #fff);
 	height: 100%;
+	background-size: 100%;
 }
 
 /* Navbar */

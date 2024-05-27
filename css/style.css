@@ -104,10 +104,11 @@ form .form-control {
 
 /* Mainheader */
 #mainheader {
-	background: radial-gradient(at 0 10px, #424242, #fff, #fff);
 	height: 100vh;
+	background-image: url("/img/background-home.jpg");
+	background-size: 50%; /* Puedes cambiar este valor para ajustar el tamaño */
+	background-repeat: no-repeat; /* Puedes cambiar esto a 'repeat' si deseas que la imagen se repita */
 }
-
 /* Navbar */
 #navbar {
 	overflow: auto;
@@ -194,16 +195,26 @@ form .form-control {
 }
 
 #about h2 {
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 }
 
 #about p {
 	padding-bottom: 20px;
 }
 
+#about .description-container{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	margin-right: 100px;
+}
+
 /* Contact */
 #contact {
-	padding: 200px 0;
+	padding: 150px 0;
+	background-image: url("/img/background-footer.jpg");
+	background-size: 40%; 
+	background-repeat: no-repeat; 
+	background-position: right bottom;
 }
 
 #contact h2 {
@@ -214,7 +225,6 @@ form .form-control {
 	width: 500px;
 	margin: 0 auto;
 	padding-top: 10px;
-	padding-bottom: 50px;
 }
 
 .contact-row {
@@ -225,17 +235,20 @@ form .form-control {
 .contact-row-img {
 	width: 50%;
 	text-align: center;
+	height: 40%;
 }
 
 .contact-row-img img {
-	padding: 120px;
+	padding: 100px;
+	width: 80%;
 }
 
 .contact-row-form {
-	width: 50%;
+	width: 40%;
 	border: 1px solid #c4c4c4;
 	border-radius: 10px;
 	padding: 40px;
+	height: 40%;
 }
 
 .contact-row-form h4 {
@@ -253,30 +266,21 @@ form .form-control {
 	padding: 30px;
 }
 
-#skills .skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    background-color: #fff;
-    border-radius: 10px;
-	border-bottom-left-radius: 0;
-	border-bottom-right-radius: 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	padding-left: 15%;
-	padding-right: 15%;
+#skills {
+	padding-left: 20%;
+	padding-right: 20%;
 }
 
 #skills .skill {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+	justify-content: center;
 }
 
 #skills .skill img {
-    max-width: 68px;
-    max-height: 68px;
+    max-width: 55px !important;
+    max-height: 55px !important;
     margin-bottom: 0.5rem;
 }
 
@@ -284,6 +288,34 @@ form .form-control {
     font-size: 1rem;
     color: #333;
 	margin-left: 5px;
+}
+
+.skills-carousel {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.skills-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.skill {
+    flex: 0 0 auto;
+    width: 100px;
+    margin: 0 10px;
+    text-align: center;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-100px * 11));
+    }
 }
 
 #me {
