@@ -6,6 +6,9 @@
 	margin: 0;
 	box-sizing: border-box;
 }
+html {
+    scroll-behavior: smooth;
+}
 
 /* Main Styling */
 html,
@@ -205,7 +208,7 @@ form .form-control {
 #about .description-container{
 	margin-top: 50px;
 	margin-bottom: 50px;
-	margin-right: 100px;
+	margin-right: 250px;
 }
 
 /* Contact */
@@ -271,6 +274,10 @@ form .form-control {
 	padding-right: 20%;
 }
 
+#skills h2{
+	margin-bottom: 20px;
+}
+
 #skills .skill {
     display: flex;
     flex-direction: column;
@@ -292,21 +299,24 @@ form .form-control {
 
 .skills-carousel {
     overflow: hidden;
-    width: 100%;
-    position: relative;
-    margin: 0 auto;
+    white-space: nowrap;
+    box-sizing: border-box;
 }
 
 .skills-track {
-    display: flex;
+    display: inline-flex;
     animation: scroll 20s linear infinite;
 }
 
 .skill {
-    flex: 0 0 auto;
-    width: 100px;
-    margin: 0 10px;
+    display: inline-block;
+    padding: 20px;
     text-align: center;
+}
+
+.skill img {
+    width: 50px;
+    height: 50px;
 }
 
 @keyframes scroll {
@@ -314,7 +324,7 @@ form .form-control {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-100px * 11));
+        transform: translateX(-50%);
     }
 }
 
@@ -325,8 +335,49 @@ form .form-control {
 #me .me-image{
 	float: left;
 	width: 25%;
+	margin-left: 100px;
+	margin-top: 40px;
 }
 
 #me{
 	text-align: left;
+}
+
+.carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 200px;
+    position: relative;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    flex: 0 0 20%;
+    max-width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.carousel-item img {
+    width: 50px;
+    height: 50px;
+}
+
+.carousel-item span {
+    margin-top: 10px;
+}
+
+.carousel-item.active {
+    transform: scale(1.5);
+    filter: brightness(1.5);
 }
