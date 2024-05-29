@@ -105,13 +105,14 @@ form .form-control {
 	border-radius: 4px;
 }
 
-/* Mainheader */
 #mainheader {
 	height: 100vh;
 	background-image: url("/img/background-home.jpg");
 	background-size: 50%; /* Puedes cambiar este valor para ajustar el tamaño */
-	background-repeat: no-repeat; /* Puedes cambiar esto a 'repeat' si deseas que la imagen se repita */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
+
 /* Navbar */
 #navbar {
 	overflow: auto;
@@ -193,7 +194,7 @@ form .form-control {
 
 /* About Me */
 #about {
-	padding: 80px 0;
+	padding: 150px 0;
 	text-align: center;
 }
 
@@ -214,10 +215,11 @@ form .form-control {
 /* Contact */
 #contact {
 	padding: 150px 0;
-	background-image: url("/img/background-footer.jpg");
-	background-size: 40%; 
 	background-repeat: no-repeat; 
 	background-position: right bottom;
+	background-image: url("/img/background-footer.jpg");
+	background-size: 40%; /* Puedes cambiar este valor para ajustar el tamaño */
+    background-attachment: fixed;
 }
 
 #contact h2 {
