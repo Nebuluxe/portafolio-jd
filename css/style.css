@@ -15,6 +15,7 @@ html,
 body {
 	font-family: 'Montserrat', sans-serif;
 	color: #4d4d4d;
+	background: #101018;
 }
 
 h1 {
@@ -42,7 +43,7 @@ a {
 /* Utility Classes */
 .container {
 	margin: auto;
-	max-width: 1300px;
+	max-width: 1000px;
 	overflow: auto;
 	padding: 0 20px;
 }
@@ -105,13 +106,13 @@ form .form-control {
 	border-radius: 4px;
 }
 
-#mainheader {
+/* #mainheader {
 	height: 100vh;
 	background-image: url("/img/background-home.jpg");
 	background-size: 50%; /* Puedes cambiar este valor para ajustar el tamaño */
     background-attachment: fixed;
     background-repeat: no-repeat;
-}
+} */
 
 /* Navbar */
 #navbar {
@@ -134,6 +135,9 @@ form .form-control {
 #navbar ul {
 	list-style: none;
 	float: right;
+	background: #2e2e2e;
+	border-radius: 20px;
+	margin-top: 15px;
 }
 
 #navbar ul li {
@@ -142,8 +146,9 @@ form .form-control {
 
 #navbar ul li a {
 	display: block;
-	padding: 20px;
+	padding: 12px;
 	text-align: center;
+	color: #ffffff;
 }
 
 #navbar ul li a:hover {
@@ -194,8 +199,7 @@ form .form-control {
 
 /* About Me */
 #about {
-	padding: 150px 0;
-	text-align: center;
+	text-align: left;
 }
 
 #about h2 {
@@ -206,21 +210,15 @@ form .form-control {
 	padding-bottom: 20px;
 }
 
-#about .description-container{
-	margin-top: 50px;
-	margin-bottom: 50px;
-	margin-right: 250px;
-}
-
 /* Contact */
-#contact {
+/* #contact {
 	padding: 150px 0;
 	background-repeat: no-repeat; 
 	background-position: right bottom;
 	background-image: url("/img/background-footer.jpg");
 	background-size: 40%; /* Puedes cambiar este valor para ajustar el tamaño */
     background-attachment: fixed;
-}
+} */
 
 #contact h2 {
 	text-align: center;
@@ -334,11 +332,8 @@ form .form-control {
 	padding-bottom: 50px;
 }
 
-#me .me-image{
-	float: left;
-	width: 25%;
-	margin-left: 100px;
-	margin-top: 40px;
+.me-image{
+	width: 50%;
 }
 
 #me{
@@ -383,3 +378,68 @@ form .form-control {
     transform: scale(1.5);
     filter: brightness(1.5);
 }
+
+.container-section{
+	margin-left: 50px;
+	margin-right: 100px;
+	margin-top: 30px;
+}
+
+.container-section .header-section{
+	margin-bottom: 30px;
+}
+
+.container-section .body-section{
+	padding-left: 20px;
+  	border-left: 2px solid gray;
+	  margin: 12px;
+}
+
+.body-section-item{
+	display: flex;
+}
+
+.body-section-item .section-item-left{
+	padding: 10px;
+	min-width: 300px;
+}
+
+.body-section-item .section-item-right{
+	padding: 10px;
+}
+
+.body-section-item .section-item-right p{
+	padding: 0;
+	margin: 0;
+}
+
+.skills-container {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(2, 1fr);
+	max-width: 800px;
+  }
+  
+  .card {
+	background-color: #333;
+	border-radius: 8px;
+	padding: 20px;
+	text-align: center;
+  }
+  
+  .card h3 {
+	margin-bottom: 15px;
+	color: #61dafb;
+  }
+  
+  .icon-set a {
+	margin: 0 10px;
+  }
+  
+  .icon-set img {
+	transition: transform 0.3s;
+  }
+  
+  .icon-set img:hover {
+	transform: scale(1.1);
+  }
