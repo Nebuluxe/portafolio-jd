@@ -106,14 +106,6 @@ form .form-control {
 	border-radius: 4px;
 }
 
-/* #mainheader {
-	height: 100vh;
-	background-image: url("/img/background-home.jpg");
-	background-size: 50%; /* Puedes cambiar este valor para ajustar el tamaño */
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-} */
-
 /* Navbar */
 #navbar {
 	overflow: auto;
@@ -209,16 +201,6 @@ form .form-control {
 #about p {
 	padding-bottom: 20px;
 }
-
-/* Contact */
-/* #contact {
-	padding: 150px 0;
-	background-repeat: no-repeat; 
-	background-position: right bottom;
-	background-image: url("/img/background-footer.jpg");
-	background-size: 40%; /* Puedes cambiar este valor para ajustar el tamaño */
-    background-attachment: fixed;
-} */
 
 #contact h2 {
 	text-align: center;
