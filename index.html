@@ -17,13 +17,27 @@
   </head>
   <body>
     <header id="mainheader">
+      <div class="lamp-container">
+        <div class="cord"></div>
+        <div class="lamp">
+            <div class="light"></div>
+        </div>
+    </div>
+    
       <nav id="navbar">
         <div class="container">
           <ul class="nav-items">
-            <li><a href="#mainheader">Inicio</a></li>
-            <li><a href="#about">Acerca de mi</a></li>
+            <li><a href="#about">Inicio</a></li>
+            <li><a href="#me">Acerca de mi</a></li>
             <!-- <li><a href="#skills">Habilidades</a></li> -->
             <li><a href="#contact">Contacto</a></li>
+            <li>
+              <div class="button-container">
+                <button id="toggleLightButton" class="light-button">
+                    <i id="lightIcon" class="bi bi-lightbulb-off"></i> <!-- Icono inicial de "apagado" -->
+                </button>
+            </div>            
+          </li>
           </ul>
         </div>
       </nav>
@@ -48,105 +62,109 @@
               <a href="https://github.com/Nebuluxe" class="btn btn-round btn-dark"><i class="bi bi-linkedin"></i> LinkedIn</a>
               <a href="/files/Joaquin-Diaz-CV.pdf" download="Joaquin-Diaz-CV.pdf" class="btn btn-round btn-dark"><i class="bi bi-file-earmark-person-fill"></i> Descargar CV</a>
             </div>
-            <div class="showcase-row-img">
+            <!-- <div class="showcase-row-img">
               <img src="/img/code-dev-icon.png" alt="" />
-            </div>
+            </div> -->
           </div>
         </div>
         <div class="container">
           <div class="container-section">
               <div class="header-section">
-                  <h4><i class="bi bi-briefcase-fill"></i> Mi experiencia</h5>
+                  <div class="circle-icon"><i class="bi bi-briefcase-fill"></i></div><h3> Mi experiencia</h3>
               </div>
               <div class="body-section">
                   <div class="body-section-item">
                       <div class="section-item-left">
-                        <h3>Programador FullStack</h3>
-                        <h5>FolderSoft</h5>
-                        <h5>Actualmente..</h5>
+                        <h3 class="mb-5">Programador FullStack</h3>
+                        <h4 class="mb-5">FolderSoft</h4>
+                        <h5 class="mb-5">Actualmente..</h5>
                       </div>
                       <div class="section-item-right">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever </p>
+                        <p>Trabajo en FolderSoft como desarrollador FullStack, brindando soporte y desarrollando soluciones como ERP, POS, CRM y un portal de empleados junto al equipo de desarrollo.</p>
                       </div>
                   </div>
               </div>
           </div>
           <div class="container-section">
             <div class="header-section">
-                <h4><i class="bi bi-tools"></i> Lenguajes y Herramientas</h5>
+              <div class="circle-icon"><i class="bi bi-tools"></i></div><h3>Lenguajes y Herramientas</h3>
             </div>
             <div class="body-section">
                 <div class="body-section-item">
                   <div class="skills-container">
                     <!-- Frontend Card -->
                     <div class="card">
-                      <h3>Frontend</h3>
+                      <h4>Frontend</h4>
                       <div class="icon-set">
                         <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap"/>
                         </a>
                         <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5"/>
                         </a>
                         <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="45" height="45"/>
-                        </a>
-                        <a href="https://ionicframework.com" target="_blank" rel="noreferrer">
-                          <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Ionic_Logo.svg" alt="ionic" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3"/>
                         </a>
                         <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript"/>
                         </a>
                       </div>
                     </div>
                 
                     <!-- Backend Card -->
                     <div class="card">
-                      <h3>Backend</h3>
+                      <h4>Backend</h4>
                       <div class="icon-set">
                         <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp"/>
                         </a>
                         <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet" width="45" height="45"/>
-                        </a>
-                        <a href="https://www.oracle.com/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle" width="45" height="45"/>
-                        </a>
-                        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original-wordmark.svg" alt="dotnet"/>
                         </a>
                         <a href="https://www.python.org" rel="nofollow">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="45" height="45">
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python">
                         </a>
                       </div>
                     </div>
                 
                     <!-- Pruebas y Automatización Card -->
                     <div class="card">
-                      <h3>Pruebas y Automatización</h3>
+                      <h4>Pruebas y Automatización</h4>
                       <div class="icon-set">
                         <a href="https://postman.com" target="_blank" rel="noreferrer">
-                          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="45" height="45"/>
+                          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman"/>
                         </a>
                         <a href="https://www.selenium.dev" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium" width="45" height="45"/>
+                          <img src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg" alt="selenium"/>
                         </a>
                       </div>
                     </div>
-                
+                    
                     <!-- Otros Servicios Card -->
                     <div class="card">
-                      <h3>Otros Servicios</h3>
+                      <h4>Bases de datos</h4>
                       <div class="icon-set">
-                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="45" height="45"/>
-                        </a>
-                        <a href="https://heroku.com" rel="nofollow">
-                          <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="45" height="45">
+                        <a href="https://www.oracle.com/" target="_blank" rel="noreferrer">
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/oracle/oracle-original.svg" alt="oracle"/>
                         </a>
                         <a href="https://www.microsoft.com/en-us/sql-server" rel="nofollow">
-                          <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql" width="45" height="45">
+                          <img src="https://www.svgrepo.com/show/303229/microsoft-sql-server-logo.svg" alt="mssql">
+                        </a>
+                        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
+                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL"/>
+                        </a>
+                      </div>
+                    </div>
+
+                    <!-- Otros Servicios Card -->
+                    <div class="card">
+                      <h4>Otros Servicios</h4>
+                      <div class="icon-set">
+                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"/>
+                        </a>
+                        <a href="https://heroku.com" rel="nofollow">
+                          <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku">
                         </a>
                       </div>
                     </div>
@@ -156,15 +174,15 @@
           </div>
           <div id="me" class="container-section">
             <div class="header-section">
-                <h4><i class="bi bi-person-raised-hand"></i> Sobre Mi</h5>
+              <div class="circle-icon"><i class="bi bi-person-raised-hand"></i></div><h3> Sobre Mi</h3>
             </div>
             <div class="body-section">
                 <div class="body-section-item">
-                    <div class="section-item-left">
+                    <div class="section-item-left" style="display: flex;justify-content: center;align-items: center;">
                       <img class="me-image" src="/img/Hi-removebg-preview.png" alt="" />
                     </div>
                     <div class="section-item-right">
-                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever </p>
+                      <p>Soy un ingeniero en informática y desarrollador full stack, apasionado por la tecnología y enfocado en ofrecer soluciones eficientes. Con experiencia en front-end, back-end y automatización de procesos, aplico principios de programación orientada a objetos y metodologías ágiles como Scrum para asegurar calidad y mejora continua. Comprometido con el aprendizaje y la innovación, busco contribuir al crecimiento de mis proyectos y equipo. </p>
                     </div>
                 </div>
             </div>
