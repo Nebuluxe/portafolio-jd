@@ -318,6 +318,8 @@ form .form-control {
 
 .me-image{
 	width: 180px;
+	background: #282831;
+  	border-radius: 50%;
 }
 
 #me{
@@ -365,7 +367,6 @@ form .form-control {
 
 .container-section{
 	margin-left: 50px;
-	margin-right: 100px;
 	margin-top: 30px;
 }
 
@@ -423,10 +424,9 @@ form .form-control {
   .card h4 {
 	margin-bottom: 15px;
 	text-align: left;
-	background: #949292;
 	text-align: center;
 	border-radius: 7px;
-	color: #101018;
+	color: #949292;
 	padding: 2px;
 	border-bottom-right-radius: 0;
   	border-bottom-left-radius: 0;
@@ -536,5 +536,78 @@ form .form-control {
 	justify-content: center;
 	align-items: center;	
 	margin-right: 15px;
+}
+
+.wrapper {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.catContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.catbody {
+  width: 80px;
+}
+.tail {
+  position: absolute;
+  width: 17px;
+  top: 50%;
+  animation: tail 0.5s ease-in infinite alternate-reverse;
+  transform-origin: top;
+}
+@keyframes tail {
+  0% {
+    transform: rotateZ(60deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-20deg);
+  }
+}
+.wall {
+  width: 300px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  width: 50px;
+  position: absolute;
+  margin: 0px 0px 100px 120px;
+}
+.zzz {
+  color: black;
+  font-weight: 700;
+  font-size: 15px;
+  animation: zzz 2s linear infinite;
+}
+.bigzzz {
+  color: black;
+  font-weight: 700;
+  font-size: 25px;
+  margin-left: 10px;
+  animation: zzz 2.3s linear infinite;
+}
+@keyframes zzz {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: transparent;
+  }
 }
 
