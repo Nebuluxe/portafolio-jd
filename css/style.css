@@ -416,13 +416,13 @@ form .form-control {
   .card {
 	border-radius: 8px;
 	margin: 20px;
-	padding: 0px;
+	padding: 5px;
 	text-align: center;
 	background: #9492921c;
   }
   
   .card h4 {
-	margin-bottom: 15px;
+	margin-bottom: 10px;
 	text-align: left;
 	text-align: center;
 	border-radius: 7px;
@@ -438,8 +438,8 @@ form .form-control {
   
   .icon-set img {
 	transition: transform 0.3s;
-	width: 45px;
-	height: 45px;
+	width: 35px;
+	height: 35px;
 	margin: 2px;
   }
   
