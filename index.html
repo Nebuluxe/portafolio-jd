@@ -16,25 +16,80 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   </head>
   <body>
+    <form id="contact-form">
+      <div class="form-group">
+        <label for="name">Nombre</label>
+        <input
+          type="text"
+          class="form-control"
+          name="from_name"
+          id="name"
+          required />
+      </div>
+      <div class="form-group">
+        <label for="email">Correo</label>
+        <input
+          type="email"
+          class="form-control"
+          name="from_email"
+          id="email"
+          required />
+      </div>
+      <div class="form-group">
+        <label for="message">Mensaje</label>
+        <textarea
+          name="message"
+          id="message"
+          cols="30"
+          rows="5"
+          class="form-control"
+          required></textarea>
+      </div>
+      <button type="submit" id="send-mail">
+        <div class="svg-wrapper-1">
+          <div class="svg-wrapper">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path fill="none" d="M0 0h24v24H0z"></path>
+              <path
+                fill="currentColor"
+                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+              ></path>
+            </svg>
+          </div>
+        </div>
+        <span>Enviar</span>
+      </button>
+      
+    </form>
     <header id="mainheader">
       <div class="lamp-container">
         <div class="cord"></div>
         <div class="lamp">
             <div class="light"></div>
         </div>
-    </div>
+      </div>
     
       <nav id="navbar">
         <div class="container">
           <ul class="nav-items">
-            <li><a href="#about">Inicio</a></li>
-            <li><a href="#me">Acerca de mi</a></li>
-            <!-- <li><a href="#skills">Habilidades</a></li> -->
-            <li><a href="#contact">Contacto</a></li>
             <li>
               <div class="button-container">
                 <button id="toggleLightButton" class="light-button">
                     <i id="lightIcon" class="bi bi-lightbulb-off"></i> <!-- Icono inicial de "apagado" -->
+                </button>
+            </div>    
+            <li><a href="#experience">Experiencia</a></li>
+            <li><a href="#me">Acerca de mi</a></li>
+            <li><a href="#projects">Proyectos</a></li>
+            <li>
+              <div class="button-container">
+                <button id="toggleContactForm" class="light-button">
+                  <i class="bi bi-send"></i>
                 </button>
             </div>            
           </li>
@@ -67,205 +122,199 @@
             </div> -->
           </div>
         </div>
-        <div class="container">
-          <div class="container-section">
-              <div class="header-section">
-                  <div class="circle-icon"><i class="bi bi-briefcase-fill"></i></div><h3> Mi experiencia</h3>
-              </div>
-              <div class="body-section">
-                  <div class="body-section-item">
-                      <div class="section-item-left">
-                        <h3 class="mb-5">Programador FullStack</h3>
-                        <h4 class="mb-5">FolderSoft</h4>
-                        <h5 class="mb-5">Actualmente..</h5>
-                      </div>
-                      <div class="section-item-right">
-                        <p>Trabajo en FolderSoft como desarrollador FullStack, brindando soporte y desarrollando soluciones como ERP, POS, CRM y un portal de empleados junto al equipo de desarrollo.</p>
-                      </div>
-                  </div>
-              </div>
-          </div>
-          <div class="container-section">
+      </div>
+    </section>
+    <section id="experience">
+      <div class="container">
+        <div class="container-section">
             <div class="header-section">
-              <div class="circle-icon"><i class="bi bi-tools"></i></div><h3>Lenguajes y Herramientas</h3>
+                <div class="circle-icon"><i class="bi bi-briefcase-fill"></i></div><h3> Mi experiencia</h3>
             </div>
             <div class="body-section">
                 <div class="body-section-item">
-                  <div class="skills-container">
-                    <!-- Frontend Card -->
-                    <div class="card">
-                      <h4>Frontend</h4>
-                      <div class="icon-set">
-                        <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/Bootstrap.svg" alt="bootstrap"/>
-                        </a>
-                        <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" alt="html5"/>
-                        </a>
-                        <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" alt="css3"/>
-                        </a>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript"/>
-                        </a>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/jQuery.svg" alt="jQuery"/>
-                        </a>
-                      </div>
-                    </div>
-                
-                    <!-- Backend Card -->
-                    <div class="card">
-                      <h4>Backend</h4>
-                      <div class="icon-set">
-                        <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp"/>
-                        </a>
-                        <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/.NET-core.svg" alt="dotnet"/>
-                        </a>
-                        <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/.NET.svg" alt="dotnet"/>
-                        </a>
-                        <a href="https://www.python.org" rel="nofollow">
-                          <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python">
-                        </a>
-                      </div>
-                    </div>
-                
-                    <!-- Pruebas y Automatización Card -->
-                    <div class="card">
-                      <h4>Pruebas y Automatización</h4>
-                      <div class="icon-set">
-                        <a href="https://postman.com" target="_blank" rel="noreferrer">
-                          <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman"/>
-                        </a>
-                        <a href="https://www.selenium.dev" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/Selenium.svg" alt="selenium"/>
-                        </a>
-                      </div>
-                    </div>
-                    
-                    <!-- Otros Servicios Card -->
-                    <div class="card">
-                      <h4>Bases de datos</h4>
-                      <div class="icon-set">
-                        <a href="https://www.oracle.com/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/Oracle.svg" alt="oracle"/>
-                        </a>
-                        <a href="https://www.microsoft.com/en-us/sql-server" rel="nofollow">
-                          <img src="https://icon.icepanel.io/Technology/png-shadow-512/Microsoft-SQL-Server.png" alt="mssql">
-                        </a>
-                        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-                          <img src="https://icon.icepanel.io/Technology/svg/MySQL.svg" alt="MySQL"/>
-                        </a>
-                      </div>
-                    </div>
-
-                    <!-- Otros Servicios Card -->
-                    <div class="card">
-                      <h4>Otros Servicios</h4>
-                      <div class="icon-set">
-                        <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
-                          <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"/>
-                        </a>
-                        <a href="https://heroku.com" rel="nofollow">
-                          <img src="https://icon.icepanel.io/Technology/svg/Heroku.svg" alt="heroku">
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div id="me" class="container-section">
-            <div class="header-section">
-              <div class="circle-icon"><i class="bi bi-person-raised-hand"></i></div><h3> Sobre Mi</h3>
-            </div>
-            <div class="body-section">
-                <div class="body-section-item">
-                    <div class="section-item-left" style="display: flex;justify-content: center;align-items: center;">
-                      <img class="me-image" src="/img/Hi-removebg-preview.png" alt="" />
+                    <div class="section-item-left">
+                      <h3 class="mb-5">Programador FullStack</h3>
+                      <h4 class="mb-5">FolderSoft</h4>
+                      <h5 class="mb-5">Actualmente..</h5>
                     </div>
                     <div class="section-item-right">
-                      <p>Soy un ingeniero en informática y desarrollador full stack, apasionado por la tecnología y enfocado en ofrecer soluciones eficientes. Con experiencia en front-end, back-end y automatización de procesos, aplico principios de programación orientada a objetos y metodologías ágiles como Scrum para asegurar calidad y mejora continua. Comprometido con el aprendizaje y la innovación, busco contribuir al crecimiento de mis proyectos y equipo. </p>
+                      <p>Trabajo en FolderSoft como desarrollador FullStack, brindando soporte y desarrollando soluciones como ERP, POS, CRM y un portal de empleados junto al equipo de desarrollo.</p>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-      </div>
-    </section>
+        <div class="container-section">
+          <div class="header-section">
+            <div class="circle-icon"><i class="bi bi-tools"></i></div><h3>Lenguajes y Herramientas</h3>
+          </div>
+          <div class="body-section">
+              <div class="body-section-item">
+                <div class="skills-container">
+                  <!-- Frontend Card -->
+                  <div class="card">
+                    <h4>Frontend</h4>
+                    <div class="icon-set">
+                      <a href="https://getbootstrap.com" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/Bootstrap.svg" alt="bootstrap"/>
+                      </a>
+                      <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/HTML5.svg" alt="html5"/>
+                      </a>
+                      <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/CSS3.svg" alt="css3"/>
+                      </a>
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript"/>
+                      </a>
+                      <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/jQuery.svg" alt="jQuery"/>
+                      </a>
+                    </div>
+                  </div>
+              
+                  <!-- Backend Card -->
+                  <div class="card">
+                    <h4>Backend</h4>
+                    <div class="icon-set">
+                      <a href="https://www.w3schools.com/cs/" target="_blank" rel="noreferrer">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp"/>
+                      </a>
+                      <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/.NET-core.svg" alt="dotnet"/>
+                      </a>
+                      <a href="https://dotnet.microsoft.com/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/.NET.svg" alt="dotnet"/>
+                      </a>
+                      <a href="https://www.python.org" rel="nofollow">
+                        <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python">
+                      </a>
+                    </div>
+                  </div>
+              
+                  <!-- Pruebas y Automatización Card -->
+                  <div class="card">
+                    <h4>Pruebas y Automatización</h4>
+                    <div class="icon-set">
+                      <a href="https://postman.com" target="_blank" rel="noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman"/>
+                      </a>
+                      <a href="https://www.selenium.dev" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/Selenium.svg" alt="selenium"/>
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <!-- Otros Servicios Card -->
+                  <div class="card">
+                    <h4>Bases de datos</h4>
+                    <div class="icon-set">
+                      <a href="https://www.oracle.com/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/Oracle.svg" alt="oracle"/>
+                      </a>
+                      <a href="https://www.microsoft.com/en-us/sql-server" rel="nofollow">
+                        <img src="https://icon.icepanel.io/Technology/png-shadow-512/Microsoft-SQL-Server.png" alt="mssql">
+                      </a>
+                      <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
+                        <img src="https://icon.icepanel.io/Technology/svg/MySQL.svg" alt="MySQL"/>
+                      </a>
+                    </div>
+                  </div>
 
-    <section id="contact">
-      <div class="container">
-        <div class="contact-row-form">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Nombre</label>
-              <input
-                type="text"
-                class="form-control"
-                name="from_name"
-                id="name"
-                required />
-            </div>
-            <div class="form-group">
-              <label for="email">Correo</label>
-              <input
-                type="email"
-                class="form-control"
-                name="from_email"
-                id="email"
-                required />
-            </div>
-            <div class="form-group">
-              <label for="message">Mensaje</label>
-              <textarea
-                name="message"
-                id="message"
-                cols="30"
-                rows="5"
-                class="form-control"
-                required></textarea>
-            </div>
-            <button type="submit" class="btn btn-dark">Enviar</button>
-          </form>
-        </div>
-        <div class="wrapper">
-          <div class="catContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 733 673"
-              class="catbody"
-            >
-              <path
-                fill="#212121"
-                d="M111.002 139.5C270.502 -24.5001 471.503 2.4997 621.002 139.5C770.501 276.5 768.504 627.5 621.002 649.5C473.5 671.5 246 687.5 111.002 649.5C-23.9964 611.5 -48.4982 303.5 111.002 139.5Z"
-              ></path>
-              <path fill="#212121" d="M184 9L270.603 159H97.3975L184 9Z"></path>
-              <path fill="#212121" d="M541 0L627.603 150H454.397L541 0Z"></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 158 564"
-              class="tail"
-            >
-              <path
-                fill="#191919"
-                d="M5.97602 76.066C-11.1099 41.6747 12.9018 0 51.3036 0V0C71.5336 0 89.8636 12.2558 97.2565 31.0866C173.697 225.792 180.478 345.852 97.0691 536.666C89.7636 553.378 73.0672 564 54.8273 564V564C16.9427 564 -5.4224 521.149 13.0712 488.085C90.2225 350.15 87.9612 241.089 5.97602 76.066Z"
-              ></path>
-            </svg>
-            <div class="text">
-              <span class="bigzzz">Z</span>
-              <span class="zzz">Z</span>
-            </div>
+                  <!-- Otros Servicios Card -->
+                  <div class="card">
+                    <h4>Otros Servicios</h4>
+                    <div class="icon-set">
+                      <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+                        <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git"/>
+                      </a>
+                      <a href="https://heroku.com" rel="nofollow">
+                        <img src="https://icon.icepanel.io/Technology/svg/Heroku.svg" alt="heroku">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
         </div>
+        <div id="me" class="container-section">
+          <div class="header-section">
+            <div class="circle-icon"><i class="bi bi-person-raised-hand"></i></div><h3> Sobre Mi</h3>
+          </div>
+          <div class="body-section">
+              <div class="body-section-item">
+                  <div class="section-item-left" style="display: flex;justify-content: center;align-items: center;">
+                    <div class="wrapper">
+                      <div class="catContainer">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 733 673"
+                          class="catbody"
+                        >
+                          <path
+                            fill="#212121"
+                            d="M111.002 139.5C270.502 -24.5001 471.503 2.4997 621.002 139.5C770.501 276.5 768.504 627.5 621.002 649.5C473.5 671.5 246 687.5 111.002 649.5C-23.9964 611.5 -48.4982 303.5 111.002 139.5Z"
+                          ></path>
+                          <path fill="#212121" d="M184 9L270.603 159H97.3975L184 9Z"></path>
+                          <path fill="#212121" d="M541 0L627.603 150H454.397L541 0Z"></path>
+                        </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 158 564"
+                          class="tail"
+                        >
+                          <path
+                            fill="#191919"
+                            d="M5.97602 76.066C-11.1099 41.6747 12.9018 0 51.3036 0V0C71.5336 0 89.8636 12.2558 97.2565 31.0866C173.697 225.792 180.478 345.852 97.0691 536.666C89.7636 553.378 73.0672 564 54.8273 564V564C16.9427 564 -5.4224 521.149 13.0712 488.085C90.2225 350.15 87.9612 241.089 5.97602 76.066Z"
+                          ></path>
+                        </svg>
+                        <div class="text">
+                          <span class="bigzzz">Z</span>
+                          <span class="zzz">Z</span>
+                        </div>
+                      </div>
+                    </div>
+                    <img class="me-image" src="/img/Hi-removebg-preview.png" alt="" />
+                  </div>
+                  <div class="section-item-right" style="padding-left: 60px;padding-right: 20px;">
+                    <p>Soy un ingeniero en informática y desarrollador full stack, apasionado por la tecnología y enfocado en ofrecer soluciones eficientes. Con experiencia en front-end, back-end y automatización de procesos, aplico principios de programación orientada a objetos y metodologías ágiles como Scrum para asegurar calidad y mejora continua. Comprometido con el aprendizaje y la innovación, busco contribuir al crecimiento de mis proyectos y equipo. </p>
+                  </div>
+              </div>
+          </div>
+      </div>
       </div>
     </section>
+    <section id="projects">
+      <div class="container my-5">
+        <h2 class="text-white mb-4">
+            <i class="bi bi-code-slash"></i> Proyectos
+        </h2>
+        <div class="row">
+            <!-- Proyecto 1 -->
+            <div class="col-md-6 mb-4">
+                <div class="project-card bg-dark p-3 rounded">
+                    <img src="img/APiBodyScanner.png"Proyecto SVGL" class="img-fluid rounded mb-3">
+                    <div class="project-description">
+                      <h3 class="text-white">Api Estimacion Peso y Altura</h3>
+                      <div class="d-flex mb-2">
+                          <span class="badge bg-secondary me-2"><i class="bi bi-file-code"></i> Python</span>
+                          <span class="badge bg-secondary"><i class="bi bi-cpu"></i> Tailwind CSS</span>
+                      </div>
+                      <p class="text-muted">
+                        Esta API permite estimar la altura y el peso de una persona a partir de una imagen enviada. Utiliza un modelo entrenado con TensorFlow y procesa las imágenes a través de Flask en ambiente local. Está preparado para que descargues este proyecto y lo subas a tu repositorio de GitHub para hacer un deploy hacia Heroku.
+                      </p>
+                      <div class="d-flex gap-2">
+                          <a href="https://github.com/Nebuluxe/API-Body-Sacenner" class="btn btn-round btn-dark"><i class="bi bi-code"></i> Code</a>
+                      </div>
+                    </div>
+                </div>
+            </div>
+  
+        </div>
+      </div>
+    </section>
+  
     <script
       type="text/javascript"
       src="https://cdn.emailjs.com/dist/email.min.js"></script>

@@ -28,7 +28,9 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 
     document.getElementById('contact-form').reset();
-
+    var contactForm = document.getElementById("contact-form");
+    contactForm.style.display = "none";
+    
     // emailjs.sendForm(serviceID, templateID, this)
     //     .then((response) => {
     //         console.log('SUCCESS!', response.status, response.text);

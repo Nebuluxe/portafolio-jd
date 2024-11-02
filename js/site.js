@@ -16,3 +16,11 @@ document.getElementById('toggleLightButton').addEventListener('click', function(
         button.classList.add('light-on');
     }
 });
+document.getElementById("toggleContactForm").addEventListener("click", function () {
+    var contactForm = document.getElementById("contact-form");
+    if (contactForm.style.display === "none" || contactForm.style.display === "") {
+        contactForm.style.display = "block";
+    } else {
+        contactForm.style.display = "none";
+    }
+});
