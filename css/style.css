@@ -13,9 +13,9 @@ html {
 /* Main Styling */
 html,
 body {
-	font-family: 'Montserrat', sans-serif;
+	font-family: Arial, sans-serif; /* Fuente de ejemplo */
 	color: #4d4d4d;
-	background: #101018;
+	background: linear-gradient(to bottom, #1a1c28 0%, #12131c 50%, #0b0c11 100%);
 }
 
 h1 {
@@ -335,12 +335,8 @@ form .form-control {
 
 .me-image{
 	width: 180px;
-	background: #282831;
+	background: #1c1c22;
   	border-radius: 50%;
-}
-
-#me{
-	text-align: left;
 }
 
 .carousel {
@@ -455,7 +451,6 @@ form .form-control {
   
   .icon-set img {
 	transition: transform 0.3s;
-	width: 35px;
 	height: 35px;
 	margin: 2px;
   }
@@ -503,7 +498,7 @@ form .form-control {
 	border-top: 370px solid rgba(255, 255, 224, 0.15);
 	filter: blur(15px);
 	opacity: 0.8;
-	transform: rotate(180deg) translateY(10%);
+	transform: rotate(180deg) translateY(15%);
 	z-index: -1;
 	left: -70px;
 }
@@ -563,7 +558,7 @@ form .form-control {
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
-	background: #282831;
+	background: #1c1c22;
 	border-radius: 50%;
 	padding: 26px;
 	right: -33px;
@@ -578,14 +573,14 @@ form .form-control {
   position: relative;
 }
 .catbody {
-  width: 80px;
+  width: 50px;
 }
 .tail {
-  position: absolute;
-  width: 17px;
-  top: 50%;
-  animation: tail 0.5s ease-in infinite alternate-reverse;
-  transform-origin: top;
+	position: absolute;
+	width: 8px;
+	top: 65%;
+	animation: tail 0.5s ease-in infinite alternate-reverse;
+	transform-origin: top;
 }
 @keyframes tail {
   0% {
@@ -602,20 +597,20 @@ form .form-control {
   width: 300px;
 }
 .text {
-  display: flex;
-  flex-direction: column;
-  width: 50px;
-  position: absolute;
-  margin: 0px 0px 100px 120px;
+	display: flex;
+	flex-direction: column;
+	width: 50px;
+	position: absolute;
+	margin: 0px 0px 80px 95px;
 }
 .zzz {
-  color: black;
+  color: white
   font-weight: 700;
   font-size: 15px;
   animation: zzz 2s linear infinite;
 }
 .bigzzz {
-  color: black;
+  color: white;
   font-weight: 700;
   font-size: 25px;
   margin-left: 10px;
@@ -626,7 +621,7 @@ form .form-control {
     color: transparent;
   }
   50% {
-    color: black;
+    color: white;
   }
   100% {
     color: transparent;
@@ -695,7 +690,11 @@ button:active {
 }
 
 .project-description{
-	padding-left: 20px;
+	margin-left: 20px;
+	background-color: #9492921c;
+	padding: 15px;
+	border-radius: 8px;
+	color: #949292;
 }
 
 .project-card{
@@ -722,3 +721,91 @@ button:active {
     font-size: 0.8rem;
     color: white;
 }
+.about-me-footer {
+	padding-top: 10px;
+	border-radius: 8px;
+	color: #9492921c;
+	max-width: 600px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+}
+
+.about-me-footer button{
+	float: right;
+	background: #1c1d23;
+}
+
+.about-me {
+	background-color: #9492921c; /* Fondo oscuro */
+	padding: 20px;
+	padding-top: 35px;
+	border-radius: 8px;
+	color: #ffffff;
+	max-width: 600px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+  }
+  
+  .about-me h2 {
+	font-size: 1.8em;
+	color: #ffd700; /* Color dorado para el título */
+	margin-bottom: 10px;
+	position: relative;
+  }
+  
+  .about-me h2::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+	width: 40px;
+	height: 3px;
+	background-color: #949292; /* Barra decorativa dorada */
+  }
+  
+  .about-me p {
+	margin-bottom: 15px;
+  }
+  
+  .about-me .highlight {
+	font-weight: bold;
+	color: #949292; /* Destacado en dorado */
+  }
+
+  #projects{
+	margin-top: 100px;
+  }
+
+  #me{
+	margin-top: 100px;
+	margin-bottom: 100px;
+  }
+
+  .more-information{
+	padding-bottom: 20px;
+	padding-top: 35px;
+	border-radius: 8px;
+	color: #ffffff;
+	max-width: 600px;
+	margin: 0 auto;
+	font-family: Arial, sans-serif;
+	line-height: 1.6;
+	display: none;
+  }
+
+  .more-information h3{
+	font-weight: normal;
+  }
+
+  .more-information-detail{
+	padding: 10px;
+	background: #1c1c23;
+	border-radius: 8px;
+	align-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 15px;
+  }

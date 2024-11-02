@@ -24,3 +24,11 @@ document.getElementById("toggleContactForm").addEventListener("click", function 
         contactForm.style.display = "none";
     }
 });
+document.getElementById("moreAbout").addEventListener("click", function () {
+    var contactForm = document.getElementById("more-information");
+    if (contactForm.style.display === "none" || contactForm.style.display === "") {
+        contactForm.style.display = "block";
+    } else {
+        contactForm.style.display = "none";
+    }
+});
