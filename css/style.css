@@ -44,7 +44,7 @@ a {
 /* Utility Classes */
 .container {
 	margin: auto;
-	max-width: 1000px;
+	max-width: 900px;
 	overflow: auto;
 	padding: 0 20px;
 }
@@ -55,6 +55,10 @@ a {
 
 .txt-gray {
 	color: #949292;
+}
+
+.txt-grayBlack {
+	color: rgb(77, 77, 77)
 }
 
 .display-1 {
@@ -111,8 +115,11 @@ form .form-control {
 /* Navbar */
 #navbar {
 	overflow: auto;
-	padding-top: 20px;
-	padding-bottom: 20px;
+	position: fixed;
+	margin: auto;
+	max-width: 900px;
+	margin-left: auto;
+	width: 100%;
 }
 
 #navbar a {
@@ -153,6 +160,7 @@ form .form-control {
 .showcase-row {
 	display: flex;
 	padding: 100px 0;
+	padding-top: 200px;
 }
 
 .showcase-row-title p.large {
@@ -439,7 +447,7 @@ form .form-control {
 	text-align: left;
 	text-align: center;
 	border-radius: 7px;
-	color: #949292;
+	color: white;
 	padding: 2px;
 	border-bottom-right-radius: 0;
   	border-bottom-left-radius: 0;
@@ -466,7 +474,7 @@ form .form-control {
     align-items: start;
     margin-top: 0;
     float: left;
-	margin-left: 220px;
+	margin-left: 245px;
 }
 
 .cord {
@@ -579,7 +587,7 @@ form .form-control {
 	position: absolute;
 	width: 8px;
 	top: 65%;
-	animation: tail 0.5s ease-in infinite alternate-reverse;
+	animation: tail 1.5s ease-in infinite alternate-reverse;
 	transform-origin: top;
 }
 @keyframes tail {
@@ -604,7 +612,7 @@ form .form-control {
 	margin: 0px 0px 80px 95px;
 }
 .zzz {
-  color: white
+  color: white;
   font-weight: 700;
   font-size: 15px;
   animation: zzz 2s linear infinite;
@@ -697,6 +705,14 @@ button:active {
 	color: #949292;
 }
 
+.project-description a{
+	background: #11121a;
+    color: #fff;
+	padding: 5px;
+	border-radius: 5px;
+
+}
+
 .project-card{
 	display: flex;
 }
@@ -710,7 +726,7 @@ button:active {
 .project-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
-	color: #949292;
+	color: white;
 }
 
 .project-card p {
@@ -719,7 +735,7 @@ button:active {
 
 .badge {
     font-size: 0.8rem;
-    color: white;
+    color: #949292;
 }
 .about-me-footer {
 	padding-top: 10px;
@@ -741,7 +757,7 @@ button:active {
 	padding: 20px;
 	padding-top: 35px;
 	border-radius: 8px;
-	color: #ffffff;
+	color: #949292;
 	max-width: 600px;
 	margin: 0 auto;
 	font-family: Arial, sans-serif;
@@ -771,7 +787,7 @@ button:active {
   
   .about-me .highlight {
 	font-weight: bold;
-	color: #949292; /* Destacado en dorado */
+	color: #ffffff; /* Destacado en dorado */
   }
 
   #projects{

@@ -75,26 +75,24 @@
       </div>
     
       <nav id="navbar">
-        <div class="container">
-          <ul class="nav-items">
-            <li>
-              <div class="button-container">
-                <button id="toggleLightButton" class="light-button">
-                    <i id="lightIcon" class="bi bi-lightbulb-off"></i> <!-- Icono inicial de "apagado" -->
-                </button>
-            </div>    
-            <li><a href="#experience">Experiencia</a></li>
-            <li><a href="#me">Acerca de mi</a></li>
-            <li><a href="#projects">Proyectos</a></li>
-            <li>
-              <div class="button-container">
-                <button id="toggleContactForm" class="light-button">
-                  <i class="bi bi-send"></i>
-                </button>
-            </div>            
-          </li>
-          </ul>
-        </div>
+        <ul class="nav-items">
+          <li>
+            <div class="button-container">
+              <button id="toggleLightButton" class="light-button">
+                  <i id="lightIcon" class="bi bi-lightbulb"></i> <!-- Icono inicial de "apagado" -->
+              </button>
+          </div>    
+          <li><a href="#experience">Experiencia</a></li>
+          <li><a href="#me">Acerca de mi</a></li>
+          <li><a href="#projects">Proyectos</a></li>
+          <li>
+            <div class="button-container">
+              <button id="toggleContactForm" class="light-button">
+                <i class="bi bi-send"></i>
+              </button>
+          </div>            
+        </li>
+        </ul>
       </nav>
     </header>
 
@@ -104,7 +102,7 @@
           <div class="showcase-row">
             <div class="showcase-row-title">
               <h1 class="display-1">
-                <span class="">Joaquín Diaz</span>
+                <span class="text-white">Joaquín Diaz</span>
                 <br /><span class="txt-gray">Full Stack Developer</span>
               </h1>
               <p class="large">
@@ -133,9 +131,9 @@
             <div class="body-section">
                 <div class="body-section-item">
                     <div class="section-item-left">
-                      <h3 class="mb-5">Programador FullStack</h3>
-                      <h4 class="mb-5">FolderSoft</h4>
-                      <h5 class="mb-5">2020 - Actualmente</h5>
+                      <h3 class="mb-5 text-white">Programador FullStack</h3>
+                      <h4 class="mb-5 txt-gray">FolderSoft</h4>
+                      <h5 class="mb-5 txt-grayBlack">2020 - Actualmente</h5>
                     </div>
                     <div class="section-item-right">
                       <p>Trabajo en FolderSoft como desarrollador FullStack, brindando soporte y desarrollando soluciones como ERP, POS, CRM y un portal de empleados junto al equipo de desarrollo.</p>
@@ -145,7 +143,7 @@
         </div>
         <div class="container-section">
           <div class="header-section">
-            <div class="circle-icon"><i class="bi bi-tools"></i></div><h3>Lenguajes y Herramientas</h3>
+            <div class="circle-icon"><i class="bi bi-code-slash"></i></div><h3>Stack Tecnológico</h3>
           </div>
           <div class="body-section">
               <div class="body-section-item">
@@ -264,7 +262,7 @@
     <section id="projects">
       <div class="container my-5">
         <h2 class="text-white mb-4">
-            <i class="bi bi-code-slash"></i> Proyectos
+            <i class="bi bi-folder"></i> Proyectos
         </h2>
         <div class="row">
             <!-- Proyecto 1 -->
@@ -274,14 +272,14 @@
                     <div class="project-description">
                       <h3 class="text-white">Api Estimacion Peso y Altura</h3>
                       <div class="d-flex mb-2">
-                          <span class="badge bg-secondary me-2"><i class="bi bi-file-code"></i> Python</span>
-                          <span class="badge bg-secondary"><i class="bi bi-cpu"></i> Tensorflow</span>
+                          <span class="badge bg-secondary me-2 txt-gray"><i class="bi bi-terminal"></i> Python</span>
+                          <span class="badge bg-secondary"><i class="bi bi-layers"></i> Tensorflow</span>
                       </div>
                       <p class="text-muted">
-                        Esta API permite estimar la altura y el peso de una persona a partir de una imagen enviada. Utiliza un modelo entrenado con TensorFlow y procesa las imágenes a través de Flask en ambiente local. Está preparado para que descargues este proyecto y lo subas a tu repositorio de GitHub para hacer un deploy hacia Heroku.
+                        API para estimar altura y peso de personas a partir de imágenes usando un modelo de TensorFlow. Desarrollada en Flask para entorno local y lista para desplegar en Heroku mediante GitHub.
                       </p>
                       <div class="d-flex gap-2">
-                          <a href="https://github.com/Nebuluxe/API-Body-Sacenner" class="btn btn-round btn-dark"><i class="bi bi-code"></i> Code</a>
+                          <a href="https://github.com/Nebuluxe/API-Body-Sacenner" target="_blank"><i class="bi bi-code"></i> Code</a>
                       </div>
                     </div>
                 </div>
