@@ -11,7 +11,11 @@ html {
 }
 
 /* Main Styling */
-html,
+html{
+	font-family: Arial, sans-serif; /* Fuente de ejemplo */
+	color: #4d4d4d;
+	background: linear-gradient(to bottom, #1a1c28 0%, #12131c 50%, #0b0c11 100%);
+}
 body {
 	font-family: Arial, sans-serif; /* Fuente de ejemplo */
 	color: #4d4d4d;
@@ -504,7 +508,7 @@ form .form-control {
 	border-left: 100px solid transparent;
 	border-right: 100px solid transparent;
 	border-top: 370px solid rgba(255, 255, 224, 0.15);
-	filter: blur(15px);
+	filter: blur(30px);
 	opacity: 0.8;
 	transform: rotate(180deg) translateY(15%);
 	z-index: -1;
@@ -750,6 +754,7 @@ button:active {
 .about-me-footer button{
 	float: right;
 	background: #1c1d23;
+	border-radius: 50%;
 }
 
 .about-me {
@@ -786,8 +791,15 @@ button:active {
   }
   
   .about-me .highlight {
-	font-weight: bold;
-	color: #ffffff; /* Destacado en dorado */
+	font-weight: bold !important;
+	color: #ffffff !important; /* Destacado en dorado */
+  }
+
+  .about-me.head{
+	background: transparent !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	max-width: 668px !important; 
   }
 
   #projects{
