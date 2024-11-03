@@ -22,12 +22,8 @@ body {
 	background: linear-gradient(to bottom, #1a1c28 0%, #12131c 50%, #0b0c11 100%);
 }
 
-h1 {
-	font-size: 2.5rem;
-}
-h2 {
-	font-size: 2rem;
-	font-weight: 500;
+h2{
+	color: white;
 }
 
 p {
@@ -35,6 +31,7 @@ p {
 	margin: 10px 0;
 	line-height: 1.7em;
 	font-weight: 300;
+	text-justify: inter-word;
 }
 
 a {
@@ -48,7 +45,7 @@ a {
 /* Utility Classes */
 .container {
 	margin: auto;
-	max-width: 900px;
+	max-width: 850px;
 	overflow: auto;
 	padding: 0 20px;
 }
@@ -66,7 +63,7 @@ a {
 }
 
 .display-1 {
-	font-size: 4rem;
+	font-size: 3rem;
 }
 
 .btn {
@@ -76,6 +73,7 @@ a {
 	font-weight: bold;
 	letter-spacing: 1px;
 	border-radius: 4px;
+	margin-right: 10px;
 }
 
 .btn-round {
@@ -83,14 +81,13 @@ a {
 }
 
 .btn-dark {
-	background: #2e2e2e;
-	border: 1px solid #2e2e2e;
+	background: #1e2737ba;
+	border: 1px solid #1e2737;
 	color: #fff;
 }
 
 .btn-dark:hover {
-	background: #525252;
-	border: 1px solid #525252;
+	border: 1px solid #32425e;
 	color: #fff;
 }
 
@@ -124,6 +121,7 @@ form .form-control {
 	max-width: 900px;
 	margin-left: auto;
 	width: 100%;
+	z-index: 99999;
 }
 
 #navbar a {
@@ -140,7 +138,7 @@ form .form-control {
 #navbar ul {
 	list-style: none;
 	float: right;
-	background: #2e2e2e;
+	background: #1e2737ba;
 	border-radius: 20px;
 	margin-top: 15px;
 }
@@ -216,6 +214,7 @@ form .form-control {
 
 #about p {
 	padding-bottom: 20px;
+	text-align: justify;
 }
 
 #contact h2 {
@@ -391,8 +390,11 @@ form .form-control {
 }
 
 .container-section{
-	margin-left: 50px;
 	margin-top: 30px;
+}
+
+.header-section{
+	display: flex;
 }
 
 .container-section .header-section{
@@ -408,7 +410,7 @@ form .form-control {
 
 .container-section .body-section{
 	padding-left: 20px;
-  	border-left: 2px solid gray;
+  	border-left: 2px solid #7b7a7a24;
 	  margin: 14px;
 }
 
@@ -429,6 +431,10 @@ form .form-control {
 .body-section-item .section-item-right p{
 	padding: 0;
 	margin: 0;
+}
+
+.section-item-right p{
+	text-align: justify;
 }
 
 .skills-container {
@@ -478,7 +484,7 @@ form .form-control {
     align-items: start;
     margin-top: 0;
     float: left;
-	margin-left: 245px;
+	margin-left: 250px;
 }
 
 .cord {
@@ -550,15 +556,12 @@ form .form-control {
 }
 
 .circle-icon{
-	font-size: 20px;
-	background: white;
-	color: #101018;
+	font-size: 25px;
+	color: white;
 	width: 30px;
-	height: 30px;
-	border-radius: 50%;
 	display: flex;
 	justify-content: center;
-	align-items: center;	
+	align-items: center;
 	margin-right: 15px;
 }
 
@@ -724,17 +727,19 @@ button:active {
 .project-card img {
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.15);
 	border-radius: 15px;
-	height: 250px;
+	height: 220px;
 }
 
 .project-card h3 {
     font-size: 1.25rem;
     font-weight: 700;
 	color: white;
+	margin-bottom: 10px;
 }
 
 .project-card p {
     font-size: 0.9rem;
+	text-align: justify;
 }
 
 .badge {
@@ -788,6 +793,7 @@ button:active {
   
   .about-me p {
 	margin-bottom: 15px;
+	text-align: justify;
   }
   
   .about-me .highlight {
@@ -803,7 +809,7 @@ button:active {
   }
 
   #projects{
-	margin-top: 100px;
+	margin-top: 15px;
   }
 
   #me{
@@ -836,4 +842,18 @@ button:active {
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 15px;
+  }
+
+  .container-bg-dark{
+	background: #11121a !important;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 15px;
+	color: white;
+  }
+
+  .projects-container{
+	margin: 15px;
+	margin-left: 0;
   }
