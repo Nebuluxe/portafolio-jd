@@ -346,7 +346,6 @@ form .form-control {
 
 .me-image{
 	width: 180px;
-	background: #1c1c22;
   	border-radius: 50%;
 }
 
@@ -573,7 +572,6 @@ form .form-control {
 	justify-content: center;
 	align-items: center;
 	margin-top: 85px;
-	background: #1c1c22;
 	border-radius: 50%;
 	padding: 26px;
 	right: -33px;
@@ -647,7 +645,7 @@ form .form-control {
 button {
 	font-family: inherit;
 	font-size: 15px;
-	background: #353434;
+	background: #32425e;
 	color: white;
 	padding: 5px;
 	display: flex;
