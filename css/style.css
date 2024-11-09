@@ -703,10 +703,8 @@ button:active {
 }
 
 .project-description{
-	margin-left: 20px;
-	background-color: #9492921c;
-	padding: 15px;
-	border-radius: 8px;
+	margin-left: 30px;
+	margin-right: 30px;
 	color: #949292;
 }
 
@@ -720,12 +718,13 @@ button:active {
 
 .project-card{
 	display: flex;
+	margin-bottom: 20px;
 }
 
 .project-card img {
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.15);
 	border-radius: 15px;
-	height: 220px;
+	height: 200px;
 }
 
 .project-card h3 {
@@ -843,7 +842,7 @@ button:active {
   }
 
   .container-bg-dark{
-	background: #11121a !important;
+	background: #1e2737ba !important;
 	padding: 5px;
 	padding-left: 10px;
 	padding-right: 10px;
@@ -855,3 +854,56 @@ button:active {
 	margin: 15px;
 	margin-left: 0;
   }
+
+  .container-section {
+	padding: 20px;
+  }
+  
+  .header-section {
+	display: flex;
+	align-items: center;
+  }
+  
+  .header-section h2 {
+	margin-left: 10px;
+  }
+  
+  .skills-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	gap: 15px;
+  }
+  
+  .tech-card {
+	background-color: #1a1a1a;
+	border-radius: 8px;
+	padding: 15px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	text-align: center;
+  }
+  
+  .tech-card h4 {
+	margin-bottom: 5px;
+  }
+  
+  .tech-card p {
+	font-size: 0.9em;
+	color: #a0a0a0;
+	margin-bottom: 10px;
+  }
+  
+  .icon-set a {
+	margin: 0 5px;
+  }
+  
+  .icon-set img {
+	width: 32px;
+	height: 32px;
+	transition: transform 0.2s;
+  }
+  
+  .icon-set img:hover {
+	transform: scale(1.1);
+  }
+  
