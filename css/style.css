@@ -340,10 +340,6 @@ form .form-control {
     }
 }
 
-#me {
-	padding-bottom: 50px;
-}
-
 .me-image{
 	width: 180px;
   	border-radius: 50%;
@@ -483,7 +479,7 @@ form .form-control {
     align-items: start;
     margin-top: 0;
     float: left;
-	margin-left: 250px;
+	margin-left: 280px;
 }
 
 .cord {
@@ -759,6 +755,14 @@ button:active {
 	border-radius: 50%;
 }
 
+.plane {
+	background-color: #9492921c; /* Fondo oscuro */
+	padding: 20px;
+	padding-top: 35px;
+	border-radius: 50%;
+	max-width: 600px;
+  }
+
 .about-me {
 	background-color: #9492921c; /* Fondo oscuro */
 	padding: 20px;
@@ -811,6 +815,13 @@ button:active {
 
   #me{
 	margin-top: 100px;
+	margin-bottom: 100px;
+	width: 500px;
+  }
+
+  #me-animation{
+	width: 350px;
+	margin: 0 auto;
 	margin-bottom: 100px;
   }
 
