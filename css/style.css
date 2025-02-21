@@ -763,16 +763,19 @@ button:active {
 	max-width: 600px;
   }
 
+.contianer-game{
+	padding: 10px;
+	border-radius: 15px;
+}
+
 .about-me {
-	background-color: #9492921c; /* Fondo oscuro */
 	padding: 20px;
-	padding-top: 35px;
 	border-radius: 8px;
 	color: #949292;
-	max-width: 600px;
-	margin: 0 auto;
 	font-family: Arial, sans-serif;
 	line-height: 1.6;
+	padding-top: 65px;
+  	padding-bottom: 40px;
   }
   
   .about-me h2 {
@@ -810,19 +813,16 @@ button:active {
   }
 
   #projects{
-	margin-top: 15px;
+	margin-top: 30px;
+	margin-bottom: 50px;
   }
 
-  #me{
-	margin-top: 100px;
-	margin-bottom: 100px;
-	width: 500px;
+  #games{
+	margin-top: 30px;
   }
 
   #me-animation{
 	width: 350px;
-	margin: 0 auto;
-	margin-bottom: 100px;
   }
 
   .more-information{
@@ -868,6 +868,7 @@ button:active {
 
   .container-section {
 	padding: 20px;
+	padding-left: 0px;
   }
   
   .header-section {
@@ -918,3 +919,51 @@ button:active {
 	transform: scale(1.1);
   }
   
+  .game-list {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap; /* Permite que las cartas se ajusten a varias filas */
+  }
+  
+  .game-list li {
+	margin: 10px; /* Espacio entre cartas */
+  }
+  
+  .game-card {
+	width: 90px;
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	background: #9492921c;
+  }
+  
+  .game-card a {
+	display: block;
+	text-decoration: none;
+	color: #e6e6e6;
+  }
+  
+  .game-card img {
+	width: 55px;
+	height: 55px;
+	object-fit: cover; 
+	margin: 16px 10px 0px 16px;
+  }
+  
+  .game-card h3 {
+	padding: 10px;
+	margin: 0;
+	text-align: center;
+	font-size: 16px;
+  }
+
+  #me{
+	display: flex;
+  }
+  
+  .modal-eastereg.hide{
+	display: none;
+  }
