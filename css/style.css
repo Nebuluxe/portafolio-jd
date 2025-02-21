@@ -48,6 +48,7 @@ a {
 	max-width: 850px;
 	overflow: auto;
 	padding: 0 20px;
+	padding-top: 20px;
 }
 
 .large {
@@ -567,11 +568,11 @@ form .form-control {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 85px;
 	border-radius: 50%;
 	padding: 26px;
-	right: -33px;
+	right: 50px;
 	position: relative;
+	float: right;
 }
 .catContainer {
   width: 100%;
@@ -721,6 +722,7 @@ button:active {
     box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.15);
 	border-radius: 15px;
 	height: 200px;
+	width: 360px;
 }
 
 .project-card h3 {
@@ -930,4 +932,30 @@ button:active {
   footer{
 	margin-bottom: 10px;
 	margin-top: 50px;
+  }
+
+  footer p{
+	float: left;
+	margin-top: 35px;
+  }
+  .message {
+	background: white;
+	color: black;
+	max-width: 200px;
+	min-height: 100px;
+	padding: 1rem;
+	position: relative;
+  
+	&::after {
+	  --size: 25px;
+  
+	  content: "";
+	  display: block;
+	  width: var(--size);
+	  height: var(--size);
+	  position: absolute;
+	  background: white;
+	  bottom: calc(var(--size) * -1);
+	  clip-path: polygon(0 0, 100% 0, 0 100%);
+	}
   }
