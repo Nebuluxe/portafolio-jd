@@ -49,6 +49,7 @@ a {
 	overflow: auto;
 	padding: 0 20px;
 	padding-top: 20px;
+	overflow: hidden;
 }
 
 .large {
@@ -139,7 +140,7 @@ form .form-control {
 #navbar ul {
 	list-style: none;
 	float: right;
-	background: #1e2737ba;
+	background: #1c2433;
 	border-radius: 20px;
 	margin-top: 15px;
 }
@@ -240,7 +241,7 @@ form .form-control {
 	border: 0;
 	padding: 20px;
 	border-radius: 10px;
-	background: #9492921c;
+	background: #1c2433;
 	color: white;
 }
 

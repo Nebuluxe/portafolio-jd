@@ -89,3 +89,74 @@
 	width: 100%;
 	padding: 10px;
 }
+
+.lamp-container{
+	margin-left: 180px;
+}
+
+#navbar ul li a{
+	padding: 10px;
+}
+
+.btn{
+	margin-top: 10px;;
+}
+
+.cord{
+	height: 80px;
+}
+
+.light{
+	top: 126px;
+}
+
+.lamp{
+	top: 80px;
+}
+
+.nav-items{
+	margin-right: 10px;
+}
+
+.light-button{
+	padding: 7px;
+}
+
+.body-section-item{
+	flex-direction: column;
+}
+
+.project-card{
+	flex-direction: column;
+}
+
+.project-card img{
+	height: 180px;
+  	width: 300px;
+	margin-left: 15px;
+	margin-right: 15px;
+	margin-bottom: 15px;;
+}
+
+.wrapper{
+	margin-right: 70px;
+	margin-top: 15px;
+}
+
+footer p{
+	text-align: center;
+}
+
+#contact-form{
+	margin: 30px;
+	margin-top: 60px;
+}
+
+.project-description{
+	margin-left: 15px;
+    margin-right: 0px;
+}
+
+.container-section{
+	padding-right: 0;
+}
