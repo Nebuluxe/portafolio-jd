@@ -937,7 +937,9 @@ button:active {
 
   footer p{
 	float: left;
-	margin-top: 35px;
+	margin-top: 50px;
+	color: #7a9098;
+	margin-bottom: 0;
   }
   .message {
 	background: white;
