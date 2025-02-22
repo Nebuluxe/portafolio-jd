@@ -571,9 +571,8 @@ form .form-control {
 	align-items: center;
 	border-radius: 50%;
 	padding: 26px;
-	right: 50px;
 	position: relative;
-	float: right;
+	float: left;
 }
 .catContainer {
   width: 100%;
@@ -937,7 +936,7 @@ button:active {
 
   footer p{
 	float: left;
-	margin-top: 50px;
+	margin-top: 40px;
 	color: #7a9098;
 	margin-bottom: 0;
   }
