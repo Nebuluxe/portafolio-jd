@@ -155,3 +155,11 @@ footer p{
 .container-section{
 	padding-right: 0;
 }
+
+.title-container{
+	display: block !important;
+}
+
+.title-container .switch{
+	margin: 0;
+}
