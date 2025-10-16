@@ -1,478 +1,396 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* --- ESTILOS GENERALES Y FUENTES --- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap');
 
-/* Reset */
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+:root {
+    --bg-color: #0d1117;
+    --primary-text-color: #c9d1d9;
+    --secondary-text-color: #8b949e;
+    --border-color: #30363d;
+    --card-bg-color: #161b22;
+    --highlight-color: #f1c40f;
+    --link-color: #58a6ff;
 }
+
 html {
     scroll-behavior: smooth;
 }
 
-/* Main Styling */
-html{
-	font-family: Arial, sans-serif; /* Fuente de ejemplo */
-	color: #4d4d4d;
-	background: linear-gradient(to bottom, #1a1c28 0%, #12131c 50%, #0b0c11 100%);
-}
 body {
-	font-family: Arial, sans-serif; /* Fuente de ejemplo */
-	color: #4d4d4d;
-	background: linear-gradient(to bottom, #1a1c28 0%, #12131c 50%, #0b0c11 100%);
+    margin: 0;
+    overflow: hidden; /* Evita el scroll mientras el paisaje es visible */
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-text-color);
+    transition: background-color 0.5s ease;
 }
 
-h2{
-	color: white;
+body.portfolio-visible {
+    overflow-y: auto; /* Permite el scroll cuando el portfolio es visible */
 }
 
-p {
-	font-size: 1rem;
-	margin: 10px 0;
-	line-height: 1.7em;
-	font-weight: 300;
-	text-justify: inter-word;
+/* ========================================= */
+/* --- 1. AJUSTES AL AMBIENTE (CIELO/LUNA) --- */
+/* ========================================= */
+
+.escena { 
+    width: 100vw; 
+    height: 100vh; 
+    background: #0c0c2c; 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    z-index: 10; 
+    transition: transform 1.5s ease-in-out, opacity 1s ease-in-out; 
+    transform-origin: 15vw 85vh; 
 }
 
-a {
-	text-decoration: none;
+.cielo { 
+    width: 100%; 
+    height: 100%; 
+    /* Gradiente radial más amplio y profundo */
+    background: radial-gradient(ellipse at center, #10103a 0%, #0c0c2c 80%); 
+    position: absolute; 
+    top: 0; 
 }
 
-.mb-5{
-	margin-bottom: 5px;
+.luna { 
+    width: 80px; 
+    height: 80px; 
+    background: #f0f0d0; 
+    border-radius: 50%; 
+    /* Sombra con tono azulado para el brillo nocturno */
+    box-shadow: 0 0 30px rgba(180, 180, 255, 0.8), 0 0 50px rgba(180, 180, 255, 0.5); 
+    position: absolute; 
+    top: 50px; 
+    right: 100px; 
 }
 
-/* Utility Classes */
-.container {
-	margin: auto;
-	max-width: 850px;
-	overflow: auto;
-	padding: 0 20px;
-	padding-top: 20px;
-	overflow: hidden;
+/* --- Estrellas sin cambios --- */
+.estrellas { width: 1px; height: 1px; background: transparent; box-shadow: 10vw 15vh #fff, 20vw 8vh #fff, 35vw 22vh #fff, 50vw 10vh #fff, 65vw 18vh #fff, 75vw 25vh #fff, 5vw 30vh #fff, 15vw 5vh #fff, 45vw 12vh #fff, 85vw 15vh #fff, 90vw 35vh #fff; }
+.estrellas-2 { width: 2px; height: 2px; background: transparent; box-shadow: 5vw 20vh #fff, 25vw 13vh #fff, 40vw 3vh #fff, 58vw 24vh #fff, 70vw 9vh #fff, 95vw 20vh #fff, 80vw 40vh #fff; }
+
+
+/* ========================================== */
+/* --- 2. MEJORAS A LAS MONTAÑAS Y EL SUELO --- */
+/* ========================================== */
+
+.montanas { 
+    position: absolute; 
+    bottom: 10%; 
+    width: 100%; 
+    height: 35%; 
 }
 
-.large {
-	font-size: 1.25rem;
+.montana { 
+    position: absolute; 
+    border-left: 20vw solid transparent; 
+    border-right: 20vw solid transparent; 
 }
 
-.txt-gray {
-	color: #949292;
+.montana-1 { 
+    /* Más oscuro y lejos */
+    border-bottom: 25vh solid #233140; 
+    bottom: 0; 
+    left: -15vw; 
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.5); 
 }
 
-.txt-grayBlack {
-	color: rgb(77, 77, 77)
+.montana-2 { 
+    /* Color principal y con buen contraste */
+    border-bottom: 20vh solid #2c3e50; 
+    bottom: 0; 
+    left: 25vw; 
+    z-index: 1; 
+    box-shadow: inset 0 10px 15px rgba(0, 0, 0, 0.7); 
 }
 
-.display-1 {
-	font-size: 3rem;
+.montana-3 { 
+    /* El más oscuro y lejano */
+    border-bottom: 28vh solid #1c2530; 
+    bottom: 0; 
+    left: 60vw; 
+    box-shadow: inset 0 5px 8px rgba(0, 0, 0, 0.4); 
 }
 
-.btn {
-	display: inline-block;
-	font-size: 15px;
-	padding: 6px 15px;
-	font-weight: bold;
-	letter-spacing: 1px;
-	border-radius: 4px;
-	margin-right: 10px;
-}
-
-.btn-round {
-	border-radius: 20px;
-}
-
-.btn-dark {
-	background: #1e2737ba;
-	border: 1px solid #1e2737;
-	color: #fff;
-}
-
-.btn-dark:hover {
-	border: 1px solid #32425e;
-	color: #fff;
-}
-
-form label {
-	display: inline-block;
-	margin-bottom: 6px;
-}
-
-form .form-group {
-	margin-bottom: 16px;
-}
-
-form .form-control {
-	display: block;
-	width: 100%;
-	padding: 7px 12px;
-	font-size: 1rem;
-	line-height: 1.5;
-	color: white;
-	background: transparent;
-	border: 1px solid #ced4da;
-	border-radius: 4px;
-	resize: none;
-}
-
-/* Navbar */
-#navbar {
-	overflow: auto;
-	position: fixed;
-	margin: auto;
-	max-width: 900px;
-	margin-left: auto;
-	width: 100%;
-	z-index: 99999;
-}
-
-#navbar a {
-	color: #4d4d4d;
-}
-
-#navbar .logo {
-	float: left;
-	padding-top: 16px;
-	font-size: 25px;
-	color: #ffffff !important;
-}
-
-#navbar ul {
-	list-style: none;
-	float: right;
-	background: #1c2433;
-	border-radius: 20px;
-	margin-top: 15px;
-}
-
-#navbar ul li {
-	float: left;
-}
-
-#navbar ul li a {
-	display: block;
-	padding: 12px;
-	text-align: center;
-	color: #ffffff;
-}
-
-#navbar ul li a:hover {
-	color: #525252;
+.suelo { 
+    width: 100%; 
+    height: 12%; 
+    /* Oscurecido para una mejor transición */
+    background: #0f161d; 
+    position: absolute; 
+    bottom: 0; 
+    z-index: 0; 
 }
 
 
-.showcase-row {
-	display: flex;
-	padding: 100px 0;
-	padding-top: 200px;
+/* =============================== */
+/* --- 3. MEJORAS A LA CASA --- */
+/* =============================== */
+
+/* =============================== */
+/* --- 0. VARIABLES DE COLOR --- */
+/* =============================== */
+:root {
+    /* Color de luz para la ventana */
+    --highlight-color: #ffc107; 
+    /* Colores de la casa */
+    --house-wall: #6d5b4a;
+    --house-roof: #4a3325;
+    --house-frame: #3d2c1e;
+    --chimney-color: #5c3b31;
 }
 
-.showcase-row-title p.large {
-	padding-bottom: 15px;
+/* =============================== */
+/* --- 1. CONTENEDOR PRINCIPAL Y EFECTOS --- */
+/* =============================== */
+
+.casa-contenedor {
+    position: absolute;
+    z-index: 6;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    /* Usando top/left como en tu código original, ajústalos según el paisaje */
+    top: 72%; 
+    left: 10%;
 }
 
-.showcase-row-img{
-	display: flex;
-	justify-content: center;
-	align-items: center;
+/* =============================== */
+/* --- 2. TEJADO Y CHIMENEA --- */
+/* =============================== */
+
+.tejado { 
+    width: 0; 
+    height: 0; 
+    /* El ancho del tejado debe coincidir con la pared (120px + 15px*2 = 150px total) -> 75px por lado */
+    border-left: 75px solid transparent; 
+    border-right: 75px solid transparent; 
+    border-bottom: 60px solid var(--house-roof); 
+    position: relative; 
+    bottom: -1px; 
+    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.3));
+    z-index: 4; /* Debajo de la chimenea */
 }
 
-.showcase-row-img img{
-	width: 50%;
-	float: right;
+/* --- CHIMENEA --- */
+.chimenea {
+  width: 25px;
+  height: 50px;
+  background-color: var(--chimney-color);
+  position: absolute;
+  top: -9px;
+  right: 25px;
+  z-index: 3;
+  border-radius: 4px 4px 0 0;
+  box-shadow: inset -2px 0 0 #4f332a;
 }
 
-/* Portfolio */
-#portfolio {
-	padding: 80px 0;
-	text-align: center;
+/* --- HUMO Y ANIMACIÓN --- */
+/* --- Estilos del Contenedor de Humo --- */
+.humo-contenedor {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: emitir-humo 8s linear infinite; 
+    /* Ajusta la opacidad inicial para un humo más sutil */
+    opacity: 0.6; /* Un poco más transparente al inicio */
 }
 
-#portfolio p {
-	width: 500px;
-	margin: 0 auto;
-	padding-top: 10px;
-	padding-bottom: 50px;
+/* --- Estilos de cada Puf (Círculo de Humo) --- */
+.puff {
+    width: 20px; /* Un poco más grandes para capturar mejor el degradado */
+    height: 20px;
+    /* CAMBIO CLAVE: Degradado radial para el efecto de luz y sombra */
+    background: radial-gradient(circle at 30% 30%, #e0e0e0, #a0a0a0); /* Del blanco al gris para el efecto 3D */
+    border-radius: 50%;
+    margin-bottom: 8px; /* Un poco más de espacio entre ellos */
+    /* Sombra interna sutil para dar más volumen */
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.2), /* Sombra interna oscura */
+                0 0 5px rgba(255, 255, 255, 0.3); /* Resplandor exterior suave */
+    /* Agregamos una ligera opacidad para que se vean más etéreos */
+    opacity: 0.7; /* Opacidad individual para cada puff */
 }
 
-.portfolio-row {
-	display: flex;
+/* Variaciones de tamaño para hacerlo más orgánico */
+.humo-contenedor .puff:nth-child(2) { 
+    width: 25px; height: 25px; /* Más grande */
+    transform: scale(1); /* Quitamos el scale del contenedor, lo manejamos aquí */
+    animation-delay: 1s; /* Retraso para que aparezcan en diferentes momentos */
+}
+.humo-contenedor .puff:nth-child(3) { 
+    width: 30px; height: 30px; /* Aún más grande */
+    transform: scale(1);
+    animation-delay: 2s; /* Otro retraso */
+}
+/* Añadimos un cuarto puff para más densidad si lo deseas */
+.humo-contenedor .puff:nth-child(4) { 
+    width: 18px; height: 18px; 
+    transform: scale(1);
+    animation-delay: 0.5s; /* Un puff más pequeño y rápido */
 }
 
-.portfolio-row img {
-	width: 100%;
-	padding: 10px;
-	border-radius: 20px;
-}
+/* =============================== */
+/* --- 2. ANIMACIÓN DEL HUMO --- */
+/* (Ajustamos los valores para un movimiento más suave y consistente) */
+/* =============================== */
 
-/* About Me */
-#about {
-	text-align: left;
-}
-
-#about h2 {
-	padding-bottom: 20px;
-}
-
-#about p {
-	padding-bottom: 20px;
-	text-align: justify;
-}
-
-#contact h2 {
-	text-align: center;
-}
-
-#contact p {
-	width: 500px;
-	margin: 0 auto;
-	padding-top: 10px;
-}
-
-#contact-form {
-	width: 300px;
-	margin-top: 35px;
-	margin-right: 110px;
-	box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.15);
-	z-index: 9999;
-	position: fixed;
-	right: 0px;
-	display: none;
-	border: 0;
-	padding: 20px;
-	border-radius: 10px;
-	background: #1c2433;
-	color: white;
-}
-
-.contact-row {
-	display: flex;
-	padding: 20px;
-}
-
-.contact-row-img {
-	width: 50%;
-	text-align: center;
-	height: 40%;
-}
-
-.contact-row-img img {
-	padding: 100px;
-	width: 80%;
-}
-
-.contact-row-form {
-	width: 340px;
-	height: 40%;
-	margin-bottom: 100px;
-	color: #949292;
-}
-
-.contact-row-form h4 {
-	padding-bottom: 40px;
-	text-align: center;
-}
-
-.contact-row-form button {
-	width: 100%;
-}
-
-/* Footer */
-#mainfooter {
-	text-align: center;
-	padding: 30px;
-}
-
-#skills {
-	padding-left: 20%;
-	padding-right: 20%;
-}
-
-#skills h2{
-	margin-bottom: 20px;
-}
-
-#skills .skill {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-	justify-content: center;
-}
-
-#skills .skill img {
-    max-width: 55px !important;
-    max-height: 55px !important;
-    margin-bottom: 0.5rem;
-}
-
-#skills .skill span {
-    font-size: 1rem;
-    color: #333;
-	margin-left: 5px;
-}
-
-.skills-carousel {
-    overflow: hidden;
-    white-space: nowrap;
-    box-sizing: border-box;
-}
-
-.skills-track {
-    display: inline-flex;
-    animation: scroll 20s linear infinite;
-}
-
-.skill {
-    display: inline-block;
-    padding: 20px;
-    text-align: center;
-}
-
-.skill img {
-    width: 50px;
-    height: 50px;
-}
-
-@keyframes scroll {
-    0% {
-        transform: translateX(0);
+@keyframes emitir-humo {
+    0% { 
+        transform: translate(-50%, 0) scale(0.8); /* Empieza un poco más pequeño */
+        opacity: 0.6; /* Opacidad inicial */
     }
-    100% {
-        transform: translateX(-50%);
+    30% {
+        opacity: 0.8; /* Se vuelve un poco más visible al inicio */
+    }
+    100% { 
+        transform: translate(-50%, -250px) scale(1.8); /* Se eleva más y crece más */
+        opacity: 0; /* Se desvanece por completo */
     }
 }
 
-.me-image{
-	width: 180px;
-  	border-radius: 50%;
+/* =============================== */
+/* --- 3. PARED Y VENTANA --- */
+/* =============================== */
+
+.pared { 
+    width: 120px; 
+    height: 90px; 
+    background-color: var(--house-wall); 
+    position: relative; 
+    left: 15px; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
-.carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    width: 100%;
-    height: 200px;
-    position: relative;
+.ventana {
+  width: 30px;
+  height: 35px;
+  background: var(--highlight-color);
+  position: absolute;
+  top: 25px;
+  left: 65px;
+  border: 4px solid var(--house-frame);
+  animation: brillar 4s infinite alternate;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
+.puerta {
+  width: 30px;
+  height: 55px;
+  background: #291e17;
+  position: absolute;
+  top: 35px;
+  left: 15px;
 }
 
-.carousel-item {
-    flex: 0 0 20%;
-    max-width: 20%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.5s ease, filter 0.5s ease;
+.puerta-perilla {
+  width: 8px;
+  height: 8px;
+  background: #000;
+  position: absolute;
+  top: 30px;
+  left: 19px;
+  border-radius: 50%;
 }
 
-.carousel-item img {
-    width: 50px;
-    height: 50px;
+@keyframes brillar { 
+    /* Brillo de luz interior animado */
+    from { 
+        box-shadow: 0 0 15px #ff8c00, 0 0 30px var(--highlight-color); 
+    } 
+    to { 
+        box-shadow: 0 0 20px #ff9a00, 0 0 40px var(--highlight-color); 
+    } 
 }
 
-.carousel-item span {
-    margin-top: 10px;
+
+/* ====================================== */
+/* --- 4. NUEVO ESTILO BOTÓN DE SALIDA --- */
+/* (Añade este estilo para tu enlace <a class="boton-salir-narrativa">) */
+/* ====================================== */
+
+.boton-salir-narrativa {
+    /* Posición */
+    position: absolute;
+    top: 30px; 
+    left: 40px; 
+    
+    /* Estilo del texto */
+    font-family: inherit;
+    font-size: 16px; 
+    font-weight: 500;
+    color: #9c9c9c; /* Gris sutil */
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    
+    /* Comportamiento */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
 }
 
-.carousel-item.active {
-    transform: scale(1.5);
-    filter: brightness(1.5);
+.boton-salir-narrativa .fa-arrow-left { /* Si usas Font Awesome */
+    margin-right: 8px; 
+    font-size: 14px; 
 }
 
-.container-section{
-	margin-top: 30px;
+.boton-salir-narrativa:hover {
+    color: #ffffff; /* Se ilumina */
+    transform: translateX(-3px); /* Efecto de regreso */
 }
 
-.header-section{
-	display: flex;
-}
+/* --- Elementos de Transición sin cambios --- */
+.mensaje-entrada { position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); color: #fff; background-color: rgba(0,0,0,0.5); padding: 8px 15px; border-radius: 20px; font-size: 14px; z-index: 11; opacity: 1; transition: opacity 0.5s ease; }
+body.portfolio-visible .escena { transform: scale(8); opacity: 0; pointer-events: none; }
+body.portfolio-visible .mensaje-entrada { opacity: 0; }
+/* --- ESTILOS DEL PORTAFOLIO --- */
+#portfolio-contenido { position: relative; z-index: 5; max-width: 900px; margin: 0 auto; padding: 5vh 40px; opacity: 0; transform: scale(0.9); pointer-events: none; transition: opacity 1s ease-in-out 0.5s, transform 1s ease-in-out 0.5s; padding-top: 0;}
+body.portfolio-visible #portfolio-contenido { opacity: 1; transform: scale(1); pointer-events: auto; }
 
-.container-section .header-section{
-	margin-bottom: 20px;
-	color: #949292;
-	display: flex;
-	align-items: center;
-}
+/* Utilidades y Contenedores */
+.container { max-width: 1100px; margin: auto; overflow: hidden; padding: 0 20px; }
+.text-white { color: #fff; }
+.txt-gray { color: var(--secondary-text-color); }
+.txt-grayBlack { color: #666; }
+.highlight { color: var(--highlight-color); }
 
-.header-section h3{
-	color: white;
-}
+/* Header y Navegación */
+#mainheader { position: relative; padding-top: 20px; z-index: 999999999;}
+#navbar { display: flex; justify-content: flex-end; padding: 20px 0; }
+.nav-items { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.nav-items a { color: var(--secondary-text-color); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
+.nav-items a:hover { color: var(--primary-text-color); }
 
-.container-section .body-section{
-	padding-left: 20px;
-  	border-left: 2px solid #7b7a7a24;
-	  margin: 14px;
-}
+/* Sección Hero (About) */
+#showcase { padding: 40px 0; }
+.display-1 { font-size: clamp(2rem, 5vw, 3.5rem); margin: 20px 0; line-height: 1.2; }
+.large { font-size: 1.1rem; line-height: 1.6; max-width: 600px; }
+.btn { display: inline-block; text-decoration: none; color: var(--primary-text-color); background-color: var(--card-bg-color); border: 1px solid var(--border-color); padding: 12px 24px; border-radius: 6px; margin: 10px 5px 0 0; transition: background-color 0.2s ease, border-color 0.2s; }
+.btn:hover { background-color: #21262d; border-color: #8b949e; }
+.btn i { margin-right: 8px; }
 
-.body-section-item{
-	display: flex;
-	color: #949292;
-}
+/* Secciones Generales (Experiencia, Proyectos) */
+section { padding: 60px 0; }
+#about {position: relative;top: -82px;padding-bottom: 0;padding-top: 120px;}
+.header-section { display: flex; align-items: center; gap: 15px; margin-bottom: 40px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
+.header-section h2 { margin: 0; font-size: 2rem; }
+.circle-icon { background: var(--card-bg-color); width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-size: 1.2rem; }
 
-.body-section-item .section-item-left{
-	padding: 10px;
-	min-width: 300px;
-}
+/* Cards de Skills y Proyectos */
+.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.card, .project-card { background: var(--card-bg-color); border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; }
+.card h4 { margin-top: 0; }
+.icon-set { display: flex; flex-wrap: wrap; gap: 15px; align-items: center; }
+.icon-set img { width: 40px; height: 40px; object-fit: contain; }
 
-.body-section-item .section-item-right{
-	padding: 10px;
-}
+.projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.project-card img { width: 100%; height: auto; border-radius: 4px; margin-bottom: 15px; }
+.project-description h3 { margin-top: 0; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0; }
+.badge { background: #2f363d; padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; }
+.badge i { margin-right: 5px; }
+.project-links { margin-top: 15px; }
+.project-links a { color: var(--link-color); text-decoration: none; margin-right: 20px; }
 
-.body-section-item .section-item-right p{
-	padding: 0;
-	margin: 0;
-}
-
-.section-item-right p{
-	text-align: justify;
-}
-
-.skills-container {
-	display: grid;
-	/* gap: 20px; */
-	grid-template-columns: repeat(2, 1fr);
-	max-width: 800px;
-  }
-  
-  .card {
-	border-radius: 8px;
-	margin: 20px;
-	padding: 5px;
-	text-align: center;
-	background: #9492921c;
-  }
-  
-  .card h4 {
-	margin-bottom: 10px;
-	text-align: left;
-	text-align: center;
-	border-radius: 7px;
-	color: white;
-	padding: 2px;
-	border-bottom-right-radius: 0;
-  	border-bottom-left-radius: 0;
-  }
-  
-  .icon-set a {
-	margin: 0 10px;
-  }
-  
-  .icon-set img {
-	transition: transform 0.3s;
-	height: 35px;
-	margin: 2px;
-  }
-  
-  .icon-set img:hover {
-	transform: scale(1.1);
-  }
+/* Animación de la Lámpara y Modo Claro/Oscuro */
 
   .lamp-container {
     position: relative;
@@ -525,458 +443,15 @@ form .form-control {
     100% { transform: rotate(5deg); }
 }
 
-#mainheader{
-	max-width: 1000px;
-	margin: auto;
-}
 
-.button-container {
-    display: flex;
-    justify-content: center;
-}
-
-.light-button {
-	display: flex;
-	align-items: center;
-	font-size: 20px;
-	padding: 10px;
-	border: none;
-	border-radius: 8px;
-	cursor: pointer;
-	transition: background-color 0.3s ease;
-	background: transparent;
-	color: white;
-}
-
-.light-button i {
-    margin-right: 8px;
-}
-
-.circle-icon{
-	font-size: 25px;
-	color: white;
-	width: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-right: 15px;
-}
-
-.wrapper {
-	width: fit-content;
-	height: fit-content;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	border-radius: 50%;
-	padding: 26px;
-	position: relative;
-	float: left;
-}
-.catContainer {
-  width: 100%;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-.catbody {
-  width: 50px;
-}
-.tail {
-	position: absolute;
-	width: 8px;
-	top: 65%;
-	animation: tail 1.5s ease-in infinite alternate-reverse;
-	transform-origin: top;
-}
-@keyframes tail {
-  0% {
-    transform: rotateZ(60deg);
-  }
-  50% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(-20deg);
-  }
-}
-.wall {
-  width: 300px;
-}
-.text {
-	display: flex;
-	flex-direction: column;
-	width: 50px;
-	position: absolute;
-	margin: 0px 0px 80px 95px;
-}
-.zzz {
-  color: white;
-  font-weight: 700;
-  font-size: 15px;
-  animation: zzz 2s linear infinite;
-}
-.bigzzz {
-  color: white;
-  font-weight: 700;
-  font-size: 25px;
-  margin-left: 10px;
-  animation: zzz 2.3s linear infinite;
-}
-@keyframes zzz {
-  0% {
-    color: transparent;
-  }
-  50% {
-    color: white;
-  }
-  100% {
-    color: transparent;
-  }
-}
-
-
-button {
-	font-family: inherit;
-	font-size: 15px;
-	background: #32425e;
-	color: white;
-	padding: 5px;
-	display: flex;
-	align-items: center;
-	border: none;
-	border-radius: 5px;
-	overflow: hidden;
-	transition: all 0.2s;
-	cursor: pointer;
-}
-
-button span {
-  display: block;
-  margin-left: 0.3em;
-  transition: all 0.3s ease-in-out;
-}
-
-button svg {
-  display: block;
-  transform-origin: center center;
-  transition: transform 0.3s ease-in-out;
-}
-
-button:hover .svg-wrapper {
-  animation: fly-1 0.6s ease-in-out infinite alternate;
-}
-
-button:hover svg {
-  transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-button:hover span {
-  transform: translateX(5em);
-}
-
-button:active {
-  transform: scale(0.95);
-}
-
-@keyframes fly-1 {
-  from {
-    transform: translateY(0.1em);
-  }
-
-  to {
-    transform: translateY(-0.1em);
-  }
-}
-.text-white{
-	color: white;
-}
-
-.mb-4{
-	margin-bottom: 40px;
-}
-
-.project-description{
-	margin-left: 30px;
-	margin-right: 30px;
-	color: #949292;
-}
-
-.project-description a{
-	background: #11121a;
-    color: #fff;
-	padding: 5px;
-	border-radius: 5px;
-
-}
-
-.project-card{
-	display: flex;
-	margin-bottom: 20px;
-}
-
-.project-card img {
-    box-shadow: 0px 8px 28px -9px rgba(0,0,0,0.15);
-	border-radius: 15px;
-	height: 200px;
-	width: 360px;
-}
-
-.project-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-	color: white;
-	margin-bottom: 10px;
-}
-
-.project-card p {
-    font-size: 0.9rem;
-	text-align: justify;
-}
-
-.badge {
-    font-size: 0.8rem;
-    color: #949292;
-}
-.about-me-footer {
-	padding-top: 10px;
-	border-radius: 8px;
-	color: #9492921c;
-	max-width: 600px;
-	margin: 0 auto;
-	font-family: Arial, sans-serif;
-	line-height: 1.6;
-}
-
-.about-me-footer button{
-	float: right;
-	background: #1c1d23;
-	border-radius: 50%;
-}
-
-.plane {
-	background-color: #9492921c; /* Fondo oscuro */
-	padding: 20px;
-	padding-top: 35px;
-	border-radius: 50%;
-	max-width: 600px;
-  }
-
-.contianer-game{
-	padding: 10px;
-	border-radius: 15px;
-}
-
-.about-me {
-	padding: 20px;
-	border-radius: 8px;
-	color: #949292;
-	font-family: Arial, sans-serif;
-	line-height: 1.6;
-	padding-top: 65px;
-  	padding-bottom: 40px;
-  }
-  
-  .about-me h2 {
-	font-size: 1.8em;
-	color: #ffd700; /* Color dorado para el título */
-	margin-bottom: 10px;
-	position: relative;
-  }
-  
-  .about-me h2::after {
-	content: "";
-	position: absolute;
-	left: 0;
-	bottom: -5px;
-	width: 40px;
-	height: 3px;
-	background-color: #949292; /* Barra decorativa dorada */
-  }
-  
-  .about-me p {
-	margin-bottom: 15px;
-	text-align: justify;
-  }
-  
-  .about-me .highlight {
-	font-weight: bold !important;
-	color: #ffffff !important; /* Destacado en dorado */
-  }
-
-  .about-me.head{
-	background: transparent !important;
-	padding: 0 !important;
-	margin: 0 !important;
-	max-width: 668px !important; 
-  }
-
-  #projects{
-	margin-top: 30px;
-	margin-bottom: 50px;
-  }
-
-  #games{
-	margin-top: 30px;
-  }
-
-  #me-animation{
-	width: 350px;
-  }
-
-  .more-information{
-	padding-bottom: 20px;
-	padding-top: 35px;
-	border-radius: 8px;
-	color: #ffffff;
-	max-width: 600px;
-	margin: 0 auto;
-	font-family: Arial, sans-serif;
-	line-height: 1.6;
-	display: none;
-  }
-
-  .more-information h3{
-	font-weight: normal;
-  }
-
-  .more-information-detail{
-	padding: 10px;
-	background: #1c1c23;
-	border-radius: 8px;
-	align-content: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-bottom: 15px;
-  }
-
-  .container-bg-dark{
-	background: #1e2737ba !important;
-	padding: 5px;
-	padding-left: 10px;
-	padding-right: 10px;
-	border-radius: 15px;
-	color: white;
-  }
-
-  .projects-container{
-	margin: 15px;
-	margin-left: 0;
-  }
-
-  .container-section {
-	padding: 20px;
-	padding-left: 0px;
-  }
-  
-  .header-section {
-	display: flex;
-	align-items: center;
-  }
-  
-  .header-section h2 {
-	margin-left: 10px;
-  }
-  
-  .skills-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-	gap: 15px;
-  }
-  
-  .tech-card {
-	background-color: #1a1a1a;
-	border-radius: 8px;
-	padding: 15px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-	color: #fff;
-	text-align: center;
-  }
-  
-  .tech-card h4 {
-	margin-bottom: 5px;
-  }
-  
-  .tech-card p {
-	font-size: 0.9em;
-	color: #a0a0a0;
-	margin-bottom: 10px;
-  }
-  
-  .icon-set a {
-	margin: 0 5px;
-  }
-  
-  .icon-set img {
-	width: 32px;
-	height: 32px;
-	transition: transform 0.2s;
-  }
-  
-  .icon-set img:hover {
-	transform: scale(1.1);
-  }
-
-  #me{
-	display: flex;
-  }
-  
-  .modal-eastereg.hide{
-	display: none;
-  }
-
-  footer{
-	margin-bottom: 10px;
-	margin-top: 50px;
-  }
-
-  footer p{
-	float: left;
-	margin-top: 40px;
-	color: #7a9098;
-	margin-bottom: 0;
-  }
-  .message {
-	background: white;
-	color: black;
-	max-width: 200px;
-	min-height: 100px;
-	padding: 1rem;
-	position: relative;
-  
-	&::after {
-	  --size: 25px;
-  
-	  content: "";
-	  display: block;
-	  width: var(--size);
-	  height: var(--size);
-	  position: absolute;
-	  background: white;
-	  bottom: calc(var(--size) * -1);
-	  clip-path: polygon(0 0, 100% 0, 0 100%);
-	}
-  }
-
-  #head-icon path {
-    fill: #000000; /* Color Negro para el tema claro (por defecto) */
-  }
-  @media (prefers-color-scheme: dark) {
-    #head-icon path {
-      fill: #FFFFFF; /* Color Blanco para el tema oscuro */
-    }
-  }
-
-  /* Switch */
+ /* Switch */
 
   /* The switch - the box around the slider */
 .switch {
   font-size: 17px;
-  position: relative;
+  position: absolute;
+  margin-left: 25px;
+  margin-top: 6px;
   display: inline-block;
   width: 1.2em;
   height: 3.3em;
@@ -1055,11 +530,378 @@ button:active {
   transform: rotateZ(90deg) rotateY(180deg) translateY(0.45em) translateX(-1.4em);
 }
 
-.title-container{
-	display: flex;
-	align-items: center;
+
+/* Footer y Animación del Gato */
+footer { padding: 40px 0; text-align: center; }
+
+.wrapper {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 26px;
+  position: relative;
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.title-container .switch{
-	margin-left: auto;
+.catContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.catbody {
+  width: 50px;
+}
+.tail {
+	position: absolute;
+	width: 8px;
+	top: 65%;
+	animation: tail 1.5s ease-in infinite alternate-reverse;
+	transform-origin: top;
+}
+@keyframes tail {
+  0% {
+    transform: rotateZ(60deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-20deg);
+  }
+}
+
+.wall {
+  width: 300px;
+}
+.text {
+	display: flex;
+	flex-direction: column;
+	width: 50px;
+	position: absolute;
+	margin: 0px 0px 80px 95px;
+}
+.zzz {
+  color: white;
+  font-weight: 700;
+  font-size: 15px;
+  animation: zzz 2s linear infinite;
+}
+.bigzzz {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  margin-left: 10px;
+  animation: zzz 2.3s linear infinite;
+}
+@keyframes zzz {
+  0% {
+    color: transparent;
+  }
+  50% {
+    color: white;
+  }
+  100% {
+    color: transparent;
+  }
+}
+
+a { text-decoration: none; }
+
+.copyright { margin-top: 20px; color: var(--secondary-text-color); text-decoration: none; }
+
+/* Modal de Contacto */
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 100; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+.modal-overlay.active { opacity: 1; pointer-events: auto; }
+.modal-content { background: var(--card-bg-color); padding: 40px; border-radius: 8px; width: 90%; max-width: 500px; position: relative; transform: scale(0.9); transition: transform 0.3s ease; }
+.modal-overlay.active .modal-content { transform: scale(1); }
+.close-button { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 2rem; color: var(--secondary-text-color); cursor: pointer; }
+#contact-form .form-group { margin-bottom: 20px; }
+#contact-form label { display: block; margin-bottom: 5px; }
+#contact-form .form-control { width: 100%; padding: 10px; background: var(--bg-color); border: 1px solid var(--border-color); color: var(--primary-text-color); border-radius: 4px; box-sizing: border-box; }
+#send-mail { font-family: inherit; font-size: 18px; background: var(--highlight-color); color: black; padding: 0.7em 1em; padding-left: 0.9em; display: flex; align-items: center; border: none; border-radius: 16px; overflow: hidden; transition: all 0.2s; cursor: pointer; }
+#send-mail span { display: block; margin-left: 0.3em; transition: all 0.3s ease-in-out; }
+#send-mail svg { display: block; transform-origin: center center; transition: transform 0.3s ease-in-out; }
+#send-mail:hover .svg-wrapper { animation: fly-1 0.6s ease-in-out infinite alternate; }
+#send-mail:hover svg { transform: translateX(1.2em) rotate(45deg) scale(1.1); }
+#send-mail:hover span { transform: translateX(5em); }
+#send-mail:active { transform: scale(0.95); }
+@keyframes fly-1 { from { transform: translateY(0.1em); } to { transform: translateY(-0.1em); } }
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .display-1 { font-size: 2.5rem; }
+    #navbar { justify-content: center; }
+    .title-container { flex-direction: column; align-items: flex-start; }
+    .body-section-item { flex-direction: column; }
+    .section-item-left { margin-bottom: 20px; }
+}
+
+/* --- VARIABLES CONVERTIDAS A CSS CUSTOM PROPERTIES --- */
+:root {
+  --dark-green: #044946;
+  --light-green: #38845E;
+  --cloud-color: #E4EFF3;
+}
+
+/* --- WRAPPER (Contenedor Principal) --- */
+.wrap {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #96DCF5;
+}
+
+/* --- CLOUD BACKGROUND --- */
+.cloud-bg {
+  position: absolute;
+  top: 80%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--cloud-color);
+}
+.cloud-bg::before { /* &::before en SASS/LESS */
+content: '';
+  position: absolute;
+  height: 13em;
+  width: 7em;
+  background-color: var(--cloud-color);
+  bottom: 100%;
+  left: 556px;
+  border-radius: 76%;
+  box-shadow: -100px 50px 0 4em var(--cloud-color),
+    -250px 100px 0 2em var(--cloud-color),
+    75px 100px 0 5em var(--cloud-color),
+    250px 25px 0 4em var(--cloud-color),
+    370px 25px 0 0 var(--cloud-color),
+    400px 125px 0 5em var(--cloud-color),
+    500px 50px 0 2em var(--cloud-color),
+    590px 75px 0 0 var(--cloud-color),
+    690px 75px 0 3em var(--cloud-color);
+}
+
+/* --- MOUNTAINS (Picos y Sombra SVG) --- */
+.peak {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%);
+}
+
+.shadow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translate(50%);
+  opacity: 0.7;
+  width: 676px;
+  height: 540px;
+}
+
+.mountain {
+  position: absolute;
+  bottom: 0;
+  left: -90px;
+  border-width: 38em 30em;
+  border-style: solid;
+  border-color: transparent transparent #93A4B4 transparent;
+}
+
+/* --- MOUNTAIN SMALL --- */
+.mountain-small {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  border-width: 33em 26em;
+  border-style: solid;
+  border-color: transparent transparent #657084 transparent;
+}
+.mountain-small::after { /* &::after en SASS/LESS */
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 100%;
+  border-width: 33em 26em;
+  border-style: solid;
+  border-color: transparent transparent #474f5d #474f5d;
+  opacity: 0.5;
+}
+
+/* --- CLOUDS (Nubes en movimiento) --- */
+.cloud {
+  -webkit-animation: move-cloud 20s linear infinite;
+  animation: move-cloud 20s linear infinite;
+  font-size: 1.25em;
+  position: absolute;
+  height: 1em;
+  border-radius: 1em;
+}
+.cloud-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Posiciones de la lista (li:nth-child(n) en SASS/LESS) */
+.cloud-list li:nth-child(1) { top: 55%; left: 25%; z-index: 1; }
+.cloud-list li:nth-child(2) { top: 47%; left: 43%; z-index: 1; }
+.cloud-list li:nth-child(3) { top: 50%; left: 70%; font-size: 0.75em; }
+.cloud-list li:nth-child(4) { top: 40%; left: 55%; font-size: 0.75em; }
+
+
+.cloud-big {
+  width: 12.25em;
+}
+.cloud-big::before { /* &::before en SASS/LESS */
+  content: '';
+  position: absolute;
+  bottom: 40%;
+  right: 20%;
+  height: 1.25em;
+  width: 1.25em;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+.cloud-small {
+  width: 5em;
+}
+.cloud-small::before { /* &::before en SASS/LESS */
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  height: 2.25em;
+  width: 2.25em;
+  border-radius: 50%;
+  background-color: inherit;
+}
+
+/* Tipos de nubes */
+.cloud-dark {
+  background-color: #BFD5E0;
+}
+.cloud-dark.cloud-big { /* &.cloud-big en SASS/LESS */
+  color: #BFD5E0;
+}
+.cloud-dark.cloud-big::before { /* &.cloud-big &::before en SASS/LESS */
+  box-shadow: -1.5em -0.2em 0 0.5em currentColor,
+    -6em -0.5em 0 0.75em currentColor,
+    -8.75em -1.15em 0 1.5em currentColor;
+}
+
+.cloud-light {
+  background-color: #E4EFF3;
+}
+.cloud-light.cloud-big { /* &.cloud-big en SASS/LESS */
+  color: #E4EFF3;
+}
+.cloud-light.cloud-big::before { /* &.cloud-big &::before en SASS/LESS */
+  box-shadow: -1.5em -0.2em 0 0.5em currentColor,
+    -6em -0.5em 0 0.75em currentColor,
+    -8.75em -1.15em 0 1.5em currentColor;
+}
+
+/* --- HILLS (Colinas) --- */
+.hill {
+  position: absolute;
+  bottom: 0;
+  border-width: 13em 35em;
+  border-style: solid;
+}
+.hill-right {
+  right: 0;
+  border-color: transparent var(--light-green) var(--light-green) transparent; /* Usa variable CSS */
+}
+.hill-left {
+  z-index: 2;
+  left: 0;
+  border-color: transparent transparent var(--dark-green) var(--dark-green); /* Usa variable CSS */
+}
+
+/* --- TREES (Árboles) --- */
+.tree {
+  z-index: 3;
+  position: absolute;
+  border-width: 2.5em 1.5em;
+  border-style: solid;
+}
+.tree-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* Posiciones de la lista (li:nth-child(n) en SASS/LESS) */
+.tree-list li:nth-child(1) { top: 66%; left: 25%; }
+.tree-list li:nth-child(2) { font-size: 0.75em; top: 75%; left: 32%; }
+.tree-list li:nth-child(3) { font-size: 1.25em; top: 68%; left: 73%; }
+.tree-list li:nth-child(4) { font-size: 1.25em; top: 60%; left: 88%; }
+.tree-list li:nth-child(5) { font-size: 2em; top: 50%; left: 10%; }
+.tree-list li:nth-child(6) { font-size: 0.75em; top: 82%; left: 55%; }
+.tree-list li:nth-child(7) { top: 72%; left: 61%; }
+
+
+.tree::before, .tree::after { /* &::before, &::after en SASS/LESS */
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-style: solid;
+}
+.tree::before {
+  border-width: 3em 2em;
+  transform: translate(-50%, -25%);
+}
+.tree::after {
+  border-width: 3.5em 2.5em;
+  transform: translate(-50%, -5%);
+}
+
+.tree-light {
+  color: #2D6448;
+  border-color: transparent transparent currentColor transparent;
+}
+.tree-light::before, .tree-light::after { /* &::before, &::after en SASS/LESS */
+  border-color: transparent transparent currentColor transparent;
+}
+
+.tree-dark {
+  color: #145c58;
+  border-color: transparent transparent currentColor transparent;
+}
+.tree-dark::before, .tree-dark::after { /* &::before, &::after en SASS/LESS */
+  border-color: transparent transparent currentColor transparent;
+}
+
+/* --- ANIMATIONS (Keyframes) --- */
+@-webkit-keyframes move-cloud {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
+}
+@keyframes move-cloud {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+  }
 }
