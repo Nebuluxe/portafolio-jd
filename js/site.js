@@ -20,9 +20,8 @@ document.getElementById('toggleLightButton').addEventListener('click', function(
     const lamp = document.querySelector('.lamp');
     const light = document.querySelector('.light');
     const ventana = document.querySelector('.ventana');
-    const lightIcon = document.getElementById('lightIcon');
+    const ventanaslep = document.querySelector('.cat-slep');
     const button = document.getElementById('toggleLightButton');
-    const body = document.body;
 
     // Cambiar la opacidad de la luz
     light.style.opacity = light.style.opacity === '0' ? '0.8' : '0';
@@ -37,6 +36,8 @@ document.getElementById('toggleLightButton').addEventListener('click', function(
 
         ventana.style.background = '#242424';
         ventana.style.animation = 'none';
+
+        ventanaslep.style.display = 'block';
     } else {
         // lightIcon.classList.replace('bi-lightbulb-off', 'bi-lightbulb');
         button.classList.add('light-on');
@@ -46,5 +47,7 @@ document.getElementById('toggleLightButton').addEventListener('click', function(
 
         ventana.style.background = 'var(--highlight-color)';
         ventana.style.animation = 'brillar 4s infinite alternate';
+
+        ventanaslep.style.display = 'none';
     }
 });

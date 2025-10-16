@@ -1,0 +1,30 @@
+.mensaje-entrada{
+	width: 202px;
+  	bottom: 15px;
+}
+
+.tree-list li{
+	display: none;
+}
+
+.tree-list li:nth-child(5){
+	display: block;
+}
+
+.tree-list li:nth-child(7){
+	top: 44%;
+	display: block;
+}
+
+.tree-list li:nth-child(4){
+	display: block;
+}
+
+#salir-portfolio{
+	top: 95px;
+  left: 25px;
+}
+
+.lamp-container{
+	right: 120px;
+}
