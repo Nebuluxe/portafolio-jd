@@ -55,6 +55,7 @@
     <a href="#" id="entrar-casa" class="casa-contenedor">
         
         <div class="chimenea">
+            <div class="chimenea-head"></div>
             <div class="humo-contenedor">
                 <div class="puff"></div>
                 <div class="puff"></div>
@@ -62,15 +63,30 @@
             </div>
         </div>
         
+        <div class="tejado-interno"><div class="ventana"><div class="stick-y"></div><div class="stick-x"></div></div></div>
         <div class="tejado"></div>
         <div class="pared">
-            <div class="puerta"><div class="puerta-perilla"></div></div>
-            <div class="ventana"></div>
-            <div class="cat-slep" style="display: none;">
-                <div class="text" style="padding: 0;position: relative;margin: 0;right: -85px;top: 10px;">
+            <div class="pared-lateral">
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+            </div>
+            <div class="puerta"><div class="ventana"><div class="stick-y"></div><div class="stick-x"></div></div><div class="puerta-perilla"></div></div>
+            <div class="ventana"><div class="stick-y"></div><div class="stick-x"></div></div>
+            <div class="cat-slep" style="display: none; position: absolute; top: -74px;z-index: 99;left: -23px;">
+                <div class="text" style="padding: 0;position: relative;margin: 0;right: -85px;top: 10px; ">
                     <span class="bigzzz">Z</span>
                     <span class="zzz">Z</span>
                 </div>
+            </div>
+            <div class="pared-lateral rigth">
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
+                <div class="tronco-pared"></div>
             </div>
         </div>
     </a>
@@ -95,13 +111,49 @@
             </div>
 
         <header id="mainheader">
-            <a href="#" id="salir-portfolio" class="boton-salir-narrativa">&#x2190; Volver</a>
+            <a href="#" id="salir-portfolio" class="boton-salir-narrativa"><i class="bi bi-chevron-left"></i> Volver</a>
             <nav id="navbar">
                 <ul class="nav-items">
                     <li><a href="#about">Inicio</a></li>
                     <li><a href="#experience">Experiencia</a></li>
-                    <li><a href="#projects">Proyectos</a></li>
+                    <li>
+                        <a href="#projects">Proyectos</a>
+                    </li>
                 </ul>
+                <div class="wrapper">
+                    <div class="catContainer">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 733 673"
+                        class="catbody"
+                        >
+                        <path
+                            fill="#212121"
+                            d="M111.002 139.5C270.502 -24.5001 471.503 2.4997 621.002 139.5C770.501 276.5 768.504 627.5 621.002 649.5C473.5 671.5 246 687.5 111.002 649.5C-23.9964 611.5 -48.4982 303.5 111.002 139.5Z"
+                        ></path>
+                        <path fill="#212121" d="M184 9L270.603 159H97.3975L184 9Z"></path>
+                        <path fill="#212121" d="M541 0L627.603 150H454.397L541 0Z"></path>
+                        </svg>
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 158 564"
+                        class="tail"
+                        >
+                        <path
+                            fill="#191919"
+                            d="M5.97602 76.066C-11.1099 41.6747 12.9018 0 51.3036 0V0C71.5336 0 89.8636 12.2558 97.2565 31.0866C173.697 225.792 180.478 345.852 97.0691 536.666C89.7636 553.378 73.0672 564 54.8273 564V564C16.9427 564 -5.4224 521.149 13.0712 488.085C90.2225 350.15 87.9612 241.089 5.97602 76.066Z"
+                        ></path>
+                        </svg>
+                        <div class="cat-slep" style="display: none;">
+                            <div class="text" style="right: -50px;top: -40px;">
+                                <span class="bigzzz">Z</span>
+                                <span class="zzz">Z</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </header>
 
@@ -189,42 +241,16 @@
                     </div>
                 </div>
             </div>
+            <iframe 
+                id="arcade-section" 
+                src="https://nebuluxe.github.io/games-js/index.html?style=bg:%230d1117;overflow:hidden" 
+                frameborder="0"
+                style="height: 100Vh;width: 100%;overflow: hidden;">
+            </iframe>        
         </section>
 
         <footer>
             <div class="footer-content container">
-        <div class="wrapper">
-          <div class="catContainer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 733 673"
-              class="catbody"
-            >
-              <path
-                fill="#212121"
-                d="M111.002 139.5C270.502 -24.5001 471.503 2.4997 621.002 139.5C770.501 276.5 768.504 627.5 621.002 649.5C473.5 671.5 246 687.5 111.002 649.5C-23.9964 611.5 -48.4982 303.5 111.002 139.5Z"
-              ></path>
-              <path fill="#212121" d="M184 9L270.603 159H97.3975L184 9Z"></path>
-              <path fill="#212121" d="M541 0L627.603 150H454.397L541 0Z"></path>
-            </svg>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 158 564"
-              class="tail"
-            >
-              <path
-                fill="#191919"
-                d="M5.97602 76.066C-11.1099 41.6747 12.9018 0 51.3036 0V0C71.5336 0 89.8636 12.2558 97.2565 31.0866C173.697 225.792 180.478 345.852 97.0691 536.666C89.7636 553.378 73.0672 564 54.8273 564V564C16.9427 564 -5.4224 521.149 13.0712 488.085C90.2225 350.15 87.9612 241.089 5.97602 76.066Z"
-              ></path>
-            </svg>
-            <div class="text">
-                <span class="bigzzz">Z</span>
-                <span class="zzz">Z</span>
-            </div>
-          </div>
-        </div>
                 <a href="https://github.com/Nebuluxe" target="_blank"><p class="copyright"><i class="bi bi-github"></i> 2025 Nebuluxe.</p></a>
             </div>
         </footer>

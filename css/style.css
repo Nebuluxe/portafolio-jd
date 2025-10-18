@@ -7,7 +7,7 @@
     --secondary-text-color: #8b949e;
     --border-color: #30363d;
     --card-bg-color: #161b22;
-    --highlight-color: #f1c40f;
+    --highlight-color: #ffc107d6;
     --link-color: #58a6ff;
 }
 
@@ -138,6 +138,7 @@ body.portfolio-visible {
     --house-roof: #4a3325;
     --house-frame: #3d2c1e;
     --chimney-color: #5c3b31;
+    --home-door: #e4e4e4;
 }
 
 /* =============================== */
@@ -150,7 +151,7 @@ body.portfolio-visible {
     cursor: pointer;
     transition: transform 0.3s ease;
     /* Usando top/left como en tu código original, ajústalos según el paisaje */
-    top: 72%; 
+    top: 65%; 
     left: 10%;
 }
 
@@ -158,32 +159,51 @@ body.portfolio-visible {
 /* --- 2. TEJADO Y CHIMENEA --- */
 /* =============================== */
 
-.tejado { 
-    width: 0; 
-    height: 0; 
-    /* El ancho del tejado debe coincidir con la pared (120px + 15px*2 = 150px total) -> 75px por lado */
-    border-left: 75px solid transparent; 
-    border-right: 75px solid transparent; 
-    border-bottom: 60px solid var(--house-roof); 
-    position: relative; 
-    bottom: -1px; 
-    filter: drop-shadow(0 4px 2px rgba(0, 0, 0, 0.3));
-    z-index: 4; /* Debajo de la chimenea */
+.tejado-interno {
+  width: 0;
+  height: 0;
+  border-left: 60px solid transparent;
+  border-right: 60px solid transparent;
+  border-bottom: 65px solid var(--house-wall);
+  position: relative;
+  bottom: -86px;
+  right: -15px;
+  z-index: 6;
 }
 
+.tejado {
+  width: 0;
+  height: 0;
+  border-left: 75px solid transparent;
+  border-right: 75px solid transparent;
+  border-bottom: 85px solid var(--chimney-color);
+  position: relative;
+  bottom: -1px;
+  z-index: 4;
+}
 /* --- CHIMENEA --- */
 .chimenea {
   width: 25px;
   height: 50px;
   background-color: var(--chimney-color);
   position: absolute;
-  top: -9px;
-  right: 25px;
+  top: 86px;
+  right: 105px;
   z-index: 3;
   border-radius: 4px 4px 0 0;
   box-shadow: inset -2px 0 0 #4f332a;
 }
-
+.chimenea-head {
+  width: 30px;
+  height: 12px;
+  background-color: var(--chimney-color);
+  position: absolute;
+  top: -5px;
+  right: -2px;
+  z-index: 3;
+  border-radius: 4px 4px 0 0;
+  box-shadow: inset -2px 0 0 #4f332a;
+}
 /* --- HUMO Y ANIMACIÓN --- */
 /* --- Estilos del Contenedor de Humo --- */
 .humo-contenedor {
@@ -198,8 +218,8 @@ body.portfolio-visible {
 
 /* --- Estilos de cada Puf (Círculo de Humo) --- */
 .puff {
-    width: 20px; /* Un poco más grandes para capturar mejor el degradado */
-    height: 20px;
+    width: 30px; /* Un poco más grandes para capturar mejor el degradado */
+    height: 30px;
     /* CAMBIO CLAVE: Degradado radial para el efecto de luz y sombra */
     background: radial-gradient(circle at 30% 30%, #e0e0e0, #a0a0a0); /* Del blanco al gris para el efecto 3D */
     border-radius: 50%;
@@ -218,7 +238,7 @@ body.portfolio-visible {
     animation-delay: 1s; /* Retraso para que aparezcan en diferentes momentos */
 }
 .humo-contenedor .puff:nth-child(3) { 
-    width: 30px; height: 30px; /* Aún más grande */
+    width: 20px; height: 20px; /* Aún más grande */
     transform: scale(1);
     animation-delay: 2s; /* Otro retraso */
 }
@@ -261,6 +281,28 @@ body.portfolio-visible {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
+.pared-lateral {
+  left: -7px;
+  position: relative;
+  top: 1px;
+  z-index: 999;
+  width: 20px;
+}
+
+.pared-lateral.rigth {
+  left: 110px;
+  position: relative;
+  top: -89px;
+  z-index: 999;
+}
+
+.tronco-pared {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #5c4e41;
+}
+
 .ventana {
   width: 30px;
   height: 35px;
@@ -268,26 +310,72 @@ body.portfolio-visible {
   position: absolute;
   top: 25px;
   left: 65px;
-  border: 4px solid var(--house-frame);
+  border: 4px solid var(--home-door);
+  animation: brillar 4s infinite alternate;
+}
+
+.ventana .stick-y {
+    /* Barra Vertical */
+    position: absolute;
+    top: 0;
+    left: 50%; /* Centrado horizontalmente */
+    transform: translateX(-50%); /* Ajuste fino para centrar */
+    width: 4px; /* Grosor de la barra */
+    height: 100%; /* Cubre toda la altura de la ventana */
+    background-color: var(--home-door); /* Usa el color del marco */
+    z-index: 10; /* Asegúrate de que esté sobre el fondo de luz */
+}
+
+.ventana .stick-x {
+    /* Barra Horizontal */
+    position: absolute;
+    top: 50%; /* Centrado verticalmente */
+    left: 0;
+    transform: translateY(-50%); /* Ajuste fino para centrar */
+    width: 100%; /* Cubre todo el ancho de la ventana */
+    height: 4px; /* Grosor de la barra */
+    background-color: var(--home-door); /* Usa el color del marco */
+    z-index: 10;
+}
+
+.tejado-interno .ventana {
+  width: 20px;
+  height: 20px;
+  background: var(--highlight-color);
+  position: absolute;
+  top: 25px;
+  left: -15px;
+  border: 4px solid var(--home-door);
+  animation: brillar 4s infinite alternate;
+}
+
+.puerta .ventana {
+  width: 23px;
+  height: 23px;
+  background: var(--highlight-color);
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  border: 0px;
   animation: brillar 4s infinite alternate;
 }
 
 .puerta {
-  width: 30px;
+  width: 36px;
   height: 55px;
-  background: #291e17;
+  background: var(--home-door);
   position: absolute;
   top: 35px;
-  left: 15px;
+  left: 22px;
 }
 
 .puerta-perilla {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   background: #000;
   position: absolute;
-  top: 30px;
-  left: 19px;
+  top: 35px;
+  left: 23px;
   border-radius: 50%;
 }
 
@@ -310,8 +398,8 @@ body.portfolio-visible {
 .boton-salir-narrativa {
     /* Posición */
     position: absolute;
-    top: 30px; 
-    left: 40px; 
+    top: 95px; 
+    left: 20px; 
     
     /* Estilo del texto */
     font-family: inherit;
@@ -325,6 +413,20 @@ body.portfolio-visible {
     cursor: pointer;
     transition: color 0.3s ease, transform 0.3s ease;
     z-index: 1000;
+
+    padding: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #161b22;
+}
+
+.nav-items li{
+    padding: 5px;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #161b22;
 }
 
 .boton-salir-narrativa .fa-arrow-left { /* Si usas Font Awesome */
@@ -354,7 +456,7 @@ body.portfolio-visible #portfolio-contenido { opacity: 1; transform: scale(1); p
 
 /* Header y Navegación */
 #mainheader { position: relative; padding-top: 20px; z-index: 999999999;}
-#navbar { display: flex; justify-content: flex-end; padding: 20px 0; }
+#navbar { display: flex; justify-content: flex-end; padding: 75px 0; }
 .nav-items { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
 .nav-items a { color: var(--secondary-text-color); text-decoration: none; font-weight: 500; transition: color 0.3s ease; }
 .nav-items a:hover { color: var(--primary-text-color); }
@@ -399,7 +501,16 @@ section { padding: 60px 0; }
     align-items: start;
     margin-top: 0;
     float: left;
-	margin-left: 280px;
+	  margin-left: 280px;
+    animation: swing 2s infinite ease-in-out;
+
+}
+#arcade-section iframe html {
+  overflow: hidden;
+}
+
+#arcade-section iframe html body {
+  background: #0d1117;
 }
 
 .cord {
@@ -418,7 +529,6 @@ section { padding: 60px 0; }
     position: absolute;
     top: 100px;
     box-shadow: 0px 0px 10px rgba(255, 255, 0, 0.8);
-    animation: swing 2s infinite ease-in-out;
 }
 
 .light {
@@ -542,11 +652,9 @@ footer { padding: 40px 0; text-align: center; }
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  padding: 26px;
-  position: relative;
-  margin-top: 25px;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+  right: 25px;
+  top: 53px;
 }
 
 .catContainer {
