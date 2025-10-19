@@ -64,6 +64,8 @@ body.portfolio-visible {
     top: 50px; 
     right: 100px; 
     display: none;
+    position: absolute;
+    z-index: 99999999;
 }
 
 .sol { 
@@ -77,10 +79,12 @@ body.portfolio-visible {
     top: 50px; 
     right: 100px; 
     display: none;
+    position: absolute;
+    z-index: 99999999;
 }
 
 .cielo.noche{
-    background: radial-gradient(ellipse at center, #10103a 0%, #0c0c2c 80%); 
+    background: radial-gradient(ellipse at center, #10103a 0%, #0c0c2c 80%) !important; 
 }
 
 .cielo.noche .luna{
@@ -88,7 +92,7 @@ body.portfolio-visible {
 }
 
 .cielo.dia{
-    background: radial-gradient(ellipse at center, #57c9ec 0%, #58a6ff 80%);
+    background: radial-gradient(ellipse at center, #57c9ec 0%, #58a6ff 80%) !important;
 }
 
 .cielo.dia .estrellas-2,
@@ -106,9 +110,59 @@ body:has(.cielo.dia) .ventana{
 }
 
 /* --- Estrellas sin cambios --- */
-.estrellas { width: 1px; height: 1px; background: transparent; box-shadow: 10vw 15vh #fff, 20vw 8vh #fff, 35vw 22vh #fff, 50vw 10vh #fff, 65vw 18vh #fff, 75vw 25vh #fff, 5vw 30vh #fff, 15vw 5vh #fff, 45vw 12vh #fff, 85vw 15vh #fff, 90vw 35vh #fff; }
-.estrellas-2 { width: 2px; height: 2px; background: transparent; box-shadow: 5vw 20vh #fff, 25vw 13vh #fff, 40vw 3vh #fff, 58vw 24vh #fff, 70vw 9vh #fff, 95vw 20vh #fff, 80vw 40vh #fff; }
+.estrellas { position: absolute; z-index: 99999999; width: 1px; height: 1px; background: transparent; box-shadow: 10vw 15vh #fff, 20vw 8vh #fff, 35vw 22vh #fff, 50vw 10vh #fff, 65vw 18vh #fff, 75vw 25vh #fff, 5vw 30vh #fff, 15vw 5vh #fff, 45vw 12vh #fff, 85vw 15vh #fff, 90vw 35vh #fff; }
+.estrellas-2 { position: absolute; z-index: 99999999; width: 2px; height: 2px; background: transparent; box-shadow: 5vw 20vh #fff, 25vw 13vh #fff, 40vw 3vh #fff, 58vw 24vh #fff, 70vw 9vh #fff, 95vw 20vh #fff, 80vw 40vh #fff; }
 
+.bandada {
+    position: absolute;
+    top: 50px; /* Posición inicial en la esquina superior derecha */
+    right: 0;
+    width: 200px; /* Ancho estimado del área de la bandada */
+    height: 100px; /* Altura estimada del área de la bandada */
+    /* Animación para mover la bandada completa */
+    animation: volar-bandada 20s linear infinite;
+    z-index: 9999999999999999;
+    position: absolute;
+}
+
+/* Estilo para los pájaros individuales (copias del SVG) */
+.bird {
+    position: absolute;
+    width: 30px; /* Tamaño de cada pájaro */
+    height: 30px;
+    opacity: 0; /* Inicialmente ocultos */
+    /* Animaciones individuales */
+    animation: aleteo 0.8s ease-in-out infinite alternate,
+               vuelo-individual 15s linear infinite; /* Movimiento relativo */
+}
+
+.bird svg {
+    width: 100%;
+    height: 100%;
+    transform: rotateY(180deg); /* Opcional: para que miren hacia la izquierda */
+}
+
+/* Keyframes para la animación de la bandada completa */
+@keyframes volar-bandada {
+    0% { transform: translateX(0); } /* Empieza en la derecha */
+    100% { transform: translateX(-150vw); } /* Se mueve fuera de la pantalla a la izquierda */
+}
+
+/* Keyframes para el aleteo individual */
+@keyframes aleteo {
+    0% { transform: scaleY(1); }
+    50% { transform: scaleY(0.7); opacity: 0.9; } /* Un poco más plano, con leve cambio de opacidad */
+    100% { transform: scaleY(1); }
+}
+
+/* Keyframes para la variación de vuelo individual (para que no parezcan estáticos) */
+@keyframes vuelo-individual {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(10px, -5px) rotate(2deg); }
+    50% { transform: translate(-5px, 10px) rotate(-3deg); }
+    75% { transform: translate(15px, -8px) rotate(1deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
 
 /* ========================================== */
 /* --- 2. MEJORAS A LAS MONTAÑAS Y EL SUELO --- */

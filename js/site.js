@@ -164,3 +164,48 @@ document.addEventListener('DOMContentLoaded', () => {
         boton.addEventListener('click', toggleDiaNoche);
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const bandadaContainer = document.querySelector('.bandada');
+    const birdShapeSVG = document.querySelector('.bird-shape'); // La forma base del pájaro SVG
+    const numberOfBirds = 10; // Cuántos pájaros queremos
+
+    if (!bandadaContainer || !birdShapeSVG) {
+        console.error('No se encontraron los contenedores o la forma SVG del pájaro.');
+        return;
+    }
+
+    // Ocultar la forma SVG original, ya que solo la usaremos como plantilla
+    birdShapeSVG.style.display = 'none';
+
+    for (let i = 0; i < numberOfBirds; i++) {
+        // Crear un nuevo div para cada pájaro
+        const bird = document.createElement('div');
+        bird.classList.add('bird');
+
+        // Clonar el SVG de la forma del pájaro y añadirlo al div
+        const clonedSvg = birdShapeSVG.cloneNode(true);
+        clonedSvg.style.display = 'block'; // Asegurarse de que el clon sea visible
+        bird.appendChild(clonedSvg);
+
+        // Posicionar aleatoriamente dentro del área de la bandada
+        // Ajusta los multiplicadores para controlar la dispersión
+        const randomX = Math.random() * 250; // Hasta 250px a la derecha del contenedor de la bandada
+        const randomY = Math.random() * 80;  // Hasta 80px hacia abajo
+        bird.style.left = `${randomX}px`;
+        bird.style.top = `${randomY}px`;
+
+        // Retrasos aleatorios para las animaciones
+        bird.style.animationDelay = `${Math.random() * 5}s, ${Math.random() * 3}s`;
+        bird.style.animationDuration = `0.7s, ${10 + Math.random() * 10}s`; // Variar duración vuelo individual
+        
+        // Opacidad gradual
+        bird.style.opacity = 0;
+        setTimeout(() => {
+            bird.style.transition = 'opacity 1s ease-in';
+            bird.style.opacity = 1;
+        }, i * 100); // Aparecen gradualmente
+
+        bandadaContainer.appendChild(bird);
+    }
+});
