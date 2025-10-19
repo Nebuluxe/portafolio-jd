@@ -36,13 +36,13 @@ document.getElementById('toggleLightButton').addEventListener('click', function(
         lamp.style.boxShadow = 'none';
         lamp.style.animation = 'none';
 
-        ventana[0].style.background = '#242424';
+        ventana[0].style.background = '#0e0e33';
         ventana[0].style.animation = 'none';
 
-        ventana[1].style.background = '#242424';
+        ventana[1].style.background = '#0e0e33';
         ventana[1].style.animation = 'none';
 
-        ventana[2].style.background = '#242424';
+        ventana[2].style.background = '#0e0e33';
         ventana[2].style.animation = 'none';
 
         ventanaslep[0].style.display = 'block';
@@ -86,23 +86,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const handleIframeLoad = () => {
         try {
             // 2. Acceder al objeto Document dentro del iframe
-            const iframeDocument = iframeElement;
-                    console.log(iframeElement);
+            const iframeDocument = iframeElement.contentDocument;
 
             if (iframeDocument) {
-                
                 // 3. Agregar un listener de 'click' al documento del iframe (delegación de eventos)
                 iframeDocument.addEventListener('click', function(event) {
                     // Buscar el elemento <a> más cercano al objetivo del click
                     const targetLink = event.target.closest('a');
 
-                    console.log(targetLink);
-
                     if (targetLink) {
                         event.preventDefault(); // Detiene la navegación dentro del iframe
 
                         const href = targetLink.href;
-                        window.open(href, '_blank');
+                        // Comprobar si el atributo 'download' está presente
+                        const downloadAttr = targetLink.getAttribute('download');
+                        
+                        if (downloadAttr !== null && downloadAttr !== false) {
+                            // Si es un enlace de descarga, forzar la descarga en la ventana principal
+                            const downloadLink = document.createElement('a');
+                            downloadLink.href = href;
+                            downloadLink.download = downloadAttr; // Usar el valor de 'download' o un nombre vacío
+                            
+                            // Simular el click para iniciar la descarga
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click();
+                            document.body.removeChild(downloadLink);
+
+                        } else if (href) { 
+                            // Si es un enlace normal, abrir en una nueva pestaña
+                            window.open(href, '_blank');
+                        }
                     }
                 });
             }
@@ -119,5 +132,35 @@ document.addEventListener('DOMContentLoaded', function() {
     // Opcional: Ejecutar la función inmediatamente si el iframe ya está cargado (útil para caché)
     if (iframeElement.contentDocument && iframeElement.contentDocument.readyState === 'complete') {
         handleIframeLoad();
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Obtener los elementos del DOM
+    const boton = document.getElementById('toggleDiaNoche');
+    const cielo = document.querySelector('.cielo');
+
+    // 2. Asegurarse de que el cielo inicie con la clase 'noche' (si no está ya en tu CSS)
+    // Esto es opcional, si tu CSS base ya define el estilo de noche, puedes omitirlo.
+    if (!cielo.classList.contains('dia') && !cielo.classList.contains('noche')) {
+        cielo.classList.add('noche');
+    }
+
+    // 3. Definir la función de cambio
+    function toggleDiaNoche() {
+        // Verifica si actualmente tiene la clase 'dia'
+        if (cielo.classList.contains('dia')) {
+            // Si es de día, cambiamos a noche
+            cielo.classList.remove('dia');
+            cielo.classList.add('noche');
+        } else {
+            // Si es de noche, cambiamos a día
+            cielo.classList.remove('noche');
+            cielo.classList.add('dia');
+        }
+    }
+
+    // 4. Asignar el evento al botón
+    if (boton) {
+        boton.addEventListener('click', toggleDiaNoche);
     }
 });

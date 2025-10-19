@@ -63,6 +63,46 @@ body.portfolio-visible {
     position: absolute; 
     top: 50px; 
     right: 100px; 
+    display: none;
+}
+
+.sol { 
+    width: 80px; 
+    height: 80px; 
+    background: hsl(60, 86%, 77%); 
+    border-radius: 50%; 
+    /* Sombra con tono azulado para el brillo nocturno */
+    box-shadow: 0 0 30px #e6ff75cc, 0 0 50px rgba(255, 247, 134, 0.5); 
+    position: absolute; 
+    top: 50px; 
+    right: 100px; 
+    display: none;
+}
+
+.cielo.noche{
+    background: radial-gradient(ellipse at center, #10103a 0%, #0c0c2c 80%); 
+}
+
+.cielo.noche .luna{
+  display: block !important;
+}
+
+.cielo.dia{
+    background: radial-gradient(ellipse at center, #57c9ec 0%, #58a6ff 80%);
+}
+
+.cielo.dia .estrellas-2,
+.cielo.dia .estrellas{
+  display: none;
+}
+
+.cielo.dia .sol{
+  display: block !important;
+}
+
+body:has(.cielo.dia) .ventana{
+  background: #58a6ff !important;
+  box-shadow: none !important;
 }
 
 /* --- Estrellas sin cambios --- */
