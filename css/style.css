@@ -1107,3 +1107,27 @@ content: '';
     transform: translateX(-200%);
   }
 }
+
+
+  #head-icon path {
+
+
+    fill: #000000; /* Color Negro para el tema claro (por defecto) */
+
+
+  }
+
+
+  @media (prefers-color-scheme: dark) {
+
+
+    #head-icon path {
+
+
+      fill: #FFFFFF; /* Color Blanco para el tema oscuro */
+
+
+    }
+
+
+  }
