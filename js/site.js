@@ -209,3 +209,22 @@ document.addEventListener('DOMContentLoaded', () => {
         bandadaContainer.appendChild(bird);
     }
 });
+
+// (function extraerCanciones() {
+//     // Spotify guarda los datos iniciales en esta etiqueta script
+//     const scriptData = document.getElementById('__NEXT_DATA__').innerText;
+//     const data = JSON.parse(scriptData);
+    
+//     // Navegamos hasta la lista de canciones en el JSON
+//     const tracks = data.props.pageProps.state.data.entity.trackList;
+    
+//     // Formateamos los datos para tu rocola
+//     const miArray = tracks.map(item => {
+//         // Extraemos el ID de la URI (ej. spotify:track:12345)
+//         const id = item.uri.split(':')[2]; 
+//         return `{ id: "${id}", titulo: "${item.title}", artista: "${item.subtitle}" }`;
+//     });
+    
+//     console.log("Copia este resultado y pégalo en tu script.js:");
+//     console.log("[\n  " + miArray.join(",\n  ") + "\n]");
+// })();

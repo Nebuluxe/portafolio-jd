@@ -1131,3 +1131,20 @@ content: '';
 
 
   }
+
+  .spotify-container{
+    margin-top: 50px;
+  }
+
+  .section-item-left{
+    min-width: 300px;
+    width: 300px;
+  }
+
+  .section-item-right p{
+    text-align: justify;
+  }
+  
+  .body-section-item{
+    display: flex;
+  }
